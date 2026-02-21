@@ -17,15 +17,6 @@ Personal academic website for Dr. Mostafizur Rahaman, Research Scientist at IBM 
 | `_config.yml` | Jekyll configuration |
 | `README.md` | This file |
 
-## Features
-
-- 🎨 Fujitsu-inspired red-pink gradient design
-- 📱 Fully responsive (mobile, tablet, desktop)
-- ✨ Scroll-reveal animations
-- 🎠 Infinite awards marquee strip
-- 🍔 Hamburger menu on mobile
-- ⚡ Zero dependencies (pure HTML/CSS/JS)
-- 🔗 Direct links to Google Scholar & LinkedIn
 
 ## Customization
 
