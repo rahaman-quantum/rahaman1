@@ -1,0 +1,23 @@
+title: "Mostafizur Rahaman | Quantum Computing Researcher"
+description: "Research Scientist at IBM Quantum Division. Expert in quantum algorithms, Hamiltonian simulation, and quantum machine learning."
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+# SEO
+author: "Mostafizur Rahaman"
+twitter_username: ""
+github_username: ""
+
+# Theme - using no theme since we have custom design
+theme: null
