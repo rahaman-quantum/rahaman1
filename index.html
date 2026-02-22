@@ -10,11 +10,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  --red:#C8001E;--crimson:#A3001A;--rose:#E8295A;
-  --grad:linear-gradient(135deg,#A3001A 0%,#C8001E 50%,#E8295A 100%);
-  --dark-900:#111114;--dark-800:#1a1a20;--dark-700:#23232b;
-  --grey-700:#3d3d48;--grey-500:#7a7a8c;--grey-300:#b0b0c0;
-  --grey-200:#e2e2ea;--grey-100:#f4f4f8;--white:#ffffff;
+  /* Primary palette — deep indigo-purple (IBM×Fujitsu inspired) */
+  --red:#3730a3;          /* indigo-700  — replaces crimson everywhere */
+  --crimson:#1e1b5e;      /* deep navy-indigo */
+  --rose:#818cf8;         /* soft violet — used on dark backgrounds */
+  --teal:#14b8a6;         /* teal accent */
+  --grad:linear-gradient(135deg,#1e1b5e 0%,#3730a3 55%,#6366f1 100%);
+  --dark-900:#0d0c1d;     /* near-black with deep blue tint */
+  --dark-800:#13122a;
+  --dark-700:#1e1d3a;
+  --grey-700:#3d3d55;--grey-500:#7a7a9a;--grey-300:#b0b0c8;
+  --grey-200:#e4e4ef;--grey-100:#f5f5fa;--white:#ffffff;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -214,13 +220,19 @@ section{padding:90px 2rem;}
 .pub-link:hover{opacity:.7;}
 /* Highlighted utility card */
 .highlight-card{
-  border:1.5px solid rgba(200,0,30,.28) !important;
-  background:linear-gradient(to bottom right,#fff 80%,rgba(200,0,30,.04)) !important;
+  border:1.5px solid rgba(99,102,241,.3) !important;
+  background:linear-gradient(to bottom right,#fff 82%,rgba(99,102,241,.05)) !important;
 }
-.highlight-card .pub-title{color:var(--crimson);}
+.highlight-card .pub-title{color:var(--dark-900);}
 .new-badge{
   background:var(--red) !important;color:#fff !important;
   animation:pulse 2s ease-in-out infinite;
+}
+/* Quantum Utility badge */
+.badge-utility{
+  font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  padding:.18rem .6rem;border-radius:4px;
+  background:linear-gradient(90deg,#1e1b5e,#6366f1);color:#fff;
 }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
 
@@ -517,19 +529,15 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
     </div>
 
     <div class="pub-tabs reveal" style="transition-delay:.1s">
-      <button class="pub-tab utility-tab active" onclick="filterPubs('utility',this)">Quantum Utility &amp; Computing</button>
-      <button class="pub-tab" onclick="filterPubs('journal',this)">Journals</button>
+      <button class="pub-tab active" onclick="filterPubs('journal',this)">Journals</button>
       <button class="pub-tab" onclick="filterPubs('conference',this)">Conference</button>
-      <button class="pub-tab" onclick="filterPubs('all',this)">All</button>
     </div>
 
     <div class="pub-list reveal" style="transition-delay:.16s" id="pubList">
 
-      <!-- ══════════════════════════════════════════
-           UTILITY TAB — 4 highlighted papers first
-           ══════════════════════════════════════════ -->
+      <!-- ══ JOURNALS ══════════════════════════════════════════════ -->
 
-      <div class="pub-card highlight-card" data-cat="utility arxiv" data-year="2026">
+      <div class="pub-card highlight-card" data-cat="journal" data-year="2026">
         <div class="pub-venue-row">
           <span class="pub-venue venue-arxiv">arXiv Preprint</span>
           <span class="pub-badge new-badge">2026 · New</span>
@@ -540,10 +548,23 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <a class="pub-link" href="https://arxiv.org/abs/2601.05749" target="_blank">arxiv.org/abs/2601.05749 →</a>
       </div>
 
-      <div class="pub-card highlight-card" data-cat="utility arxiv" data-year="2025">
+      <div class="pub-card highlight-card" data-cat="journal" data-year="2025">
+        <div class="pub-venue-row">
+          <span class="pub-venue venue-nature">Nature Sci Rep</span>
+          <span class="pub-badge">Q1 · IF 3.9 · 2025</span>
+          <span class="badge-utility">Quantum Utility</span>
+        </div>
+        <div class="pub-title">Shallow Entangled Circuits for Quantum Time Series Prediction on IBM Devices</div>
+        <div class="pub-authors"><strong>Laskar, M. R.</strong>, Goel, R.</div>
+        <div class="pub-meta">Scientific Reports 15, 43727 (2025)</div>
+        <a class="pub-link" href="https://doi.org/10.1038/s41598-025-28512-6" target="_blank">doi.org/10.1038/s41598-025-28512-6 →</a>
+      </div>
+
+      <div class="pub-card highlight-card" data-cat="journal" data-year="2025">
         <div class="pub-venue-row">
           <span class="pub-venue venue-arxiv">arXiv Preprint</span>
           <span class="pub-badge">2025</span>
+          <span class="badge-utility">Quantum Utility</span>
         </div>
         <div class="pub-title">Basis Adaptive Algorithm for Quantum Many-Body Systems on Quantum Computers</div>
         <div class="pub-authors">Biswas, A., Ghosh, S., Majumdar, R., <strong>Laskar, M. R.</strong>, Kumar, M.</div>
@@ -551,21 +572,11 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <a class="pub-link" href="https://arxiv.org/abs/2512.12753" target="_blank">arxiv.org/abs/2512.12753 →</a>
       </div>
 
-      <div class="pub-card highlight-card" data-cat="utility journal" data-year="2025">
-        <div class="pub-venue-row">
-          <span class="pub-venue venue-nature">Nature Sci Rep</span>
-          <span class="pub-badge">Q1 · IF 3.9 · 2025</span>
-        </div>
-        <div class="pub-title">Shallow Entangled Circuits for Quantum Time Series Prediction on IBM Devices</div>
-        <div class="pub-authors"><strong>Laskar, M. R.</strong>, Goel, R.</div>
-        <div class="pub-meta">Scientific Reports 15, 43727 (2025)</div>
-        <a class="pub-link" href="https://doi.org/10.1038/s41598-025-28512-6" target="_blank">doi.org/10.1038/s41598-025-28512-6 →</a>
-      </div>
-
-      <div class="pub-card highlight-card" data-cat="utility arxiv" data-year="2025">
+      <div class="pub-card highlight-card" data-cat="journal" data-year="2025">
         <div class="pub-venue-row">
           <span class="pub-venue venue-arxiv">arXiv Preprint</span>
           <span class="pub-badge">2025 · Cited 1</span>
+          <span class="badge-utility">Quantum Utility</span>
         </div>
         <div class="pub-title">Physics-Informed Generative Machine Learning for Accelerated Quantum-centric Supercomputing</div>
         <div class="pub-authors">Patra, C., Mondal, D., Halder, S., Halder, D., <strong>Laskar, M. R.</strong>, Goel, R., Maitra, R.</div>
@@ -573,58 +584,6 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <a class="pub-link" href="https://arxiv.org/abs/2512.06858" target="_blank">arxiv.org/abs/2512.06858 →</a>
       </div>
 
-      <!-- ══════════════════════════════════════════
-           ADDITIONAL UTILITY (non-highlighted)
-           ══════════════════════════════════════════ -->
-
-      <div class="pub-card" data-cat="utility journal" data-year="2025">
-        <div class="pub-venue-row">
-          <span class="pub-venue venue-ieee">IEEE TCCN</span>
-          <span class="pub-badge">Q1 · IF 6.35 · 2025 · In Press</span>
-        </div>
-        <div class="pub-title">QRadCom: Quantum-Assisted Source and Symbol Detection Framework in Radar Communication System</div>
-        <div class="pub-authors">Naskar, S.*, <strong>Laskar, M. R.*</strong>, Dutta, A. K. &nbsp;(*Equal contribution)</div>
-        <div class="pub-meta">IEEE Transactions on Cognitive Communications and Networking, 2025</div>
-      </div>
-
-      <div class="pub-card" data-cat="utility journal" data-year="2024">
-        <div class="pub-venue-row">
-          <span class="pub-venue venue-nature">Nature Sci Rep</span>
-          <span class="pub-badge">Q1 · IF 3.9 · 2024</span>
-        </div>
-        <div class="pub-title">Efficient Simulation of Potential Energy Operators on Quantum Hardware: A Study on Sodium Iodide (NaI)</div>
-        <div class="pub-authors"><strong>Laskar, M. R.</strong>, Bhattacharya, K., Atanu, Dasgupta, K.</div>
-        <div class="pub-meta">Nature Scientific Reports, 2024</div>
-        <a class="pub-link" href="https://www.nature.com/articles/s41598-024-60605-6" target="_blank">nature.com/articles/s41598-024-60605-6 →</a>
-      </div>
-
-      <div class="pub-card" data-cat="utility journal" data-year="2024">
-        <div class="pub-venue-row">
-          <span class="pub-venue venue-nature">Nature Sci Rep</span>
-          <span class="pub-badge">Q1 · IF 3.9 · Apr 2024</span>
-        </div>
-        <div class="pub-title">A Complexity Efficient Penta-Diagonal Quantum Smoothing Filter for ECG Signal Denoising</div>
-        <div class="pub-authors"><strong>Laskar, M. R.</strong>, Pratiher, S., Dutta, A. K., Ghosh, N., Patra, A.</div>
-        <div class="pub-meta">Nature Scientific Reports, April 2024</div>
-        <a class="pub-link" href="https://doi.org/10.1038/s41598-024-59851-5" target="_blank">doi.org/10.1038/s41598-024-59851-5 →</a>
-      </div>
-
-      <div class="pub-card" data-cat="utility arxiv" data-year="2024">
-        <div class="pub-venue-row">
-          <span class="pub-venue venue-arxiv">TechRxiv · Preprint</span>
-          <span class="pub-badge">Oct 2024</span>
-        </div>
-        <div class="pub-title">The Pursuit of Quantum Advantage with IBM Quantum Computers: A Perspective and Potential Research Problems</div>
-        <div class="pub-authors"><strong>Laskar, M. R.</strong>, Majumdar, R., Dasgupta, K., Dhinakaran, V., Subramaniam, V.</div>
-        <div class="pub-meta">TechRxiv, October 2024 · IBM Quantum, India</div>
-        <a class="pub-link" href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.173014358.86926254" target="_blank">techrxiv.org →</a>
-      </div>
-
-      <!-- ══════════════════════════════════════════
-           JOURNALS — all shown when tab clicked,
-           ordered newest → oldest
-           ══════════════════════════════════════════ -->
-
       <div class="pub-card" data-cat="journal" data-year="2025">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE TCCN</span>
@@ -633,17 +592,6 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <div class="pub-title">QRadCom: Quantum-Assisted Source and Symbol Detection Framework in Radar Communication System</div>
         <div class="pub-authors">Naskar, S.*, <strong>Laskar, M. R.*</strong>, Dutta, A. K. &nbsp;(*Equal contribution)</div>
         <div class="pub-meta">IEEE Transactions on Cognitive Communications and Networking, 2025</div>
-      </div>
-
-      <div class="pub-card" data-cat="journal" data-year="2025">
-        <div class="pub-venue-row">
-          <span class="pub-venue venue-nature">Nature Sci Rep</span>
-          <span class="pub-badge">Q1 · IF 3.9 · 2025</span>
-        </div>
-        <div class="pub-title">Shallow Entangled Circuits for Quantum Time Series Prediction on IBM Devices</div>
-        <div class="pub-authors"><strong>Laskar, M. R.</strong>, Goel, R.</div>
-        <div class="pub-meta">Scientific Reports 15, 43727 (2025)</div>
-        <a class="pub-link" href="https://doi.org/10.1038/s41598-025-28512-6" target="_blank">doi.org/10.1038/s41598-025-28512-6 →</a>
       </div>
 
       <div class="pub-card" data-cat="journal" data-year="2024">
@@ -676,6 +624,17 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Pratiher, S., Dutta, A. K., Ghosh, N., Patra, A.</div>
         <div class="pub-meta">Nature Scientific Reports, April 2024</div>
         <a class="pub-link" href="https://doi.org/10.1038/s41598-024-59851-5" target="_blank">doi.org/10.1038/s41598-024-59851-5 →</a>
+      </div>
+
+      <div class="pub-card" data-cat="journal" data-year="2024">
+        <div class="pub-venue-row">
+          <span class="pub-venue venue-arxiv">TechRxiv · Preprint</span>
+          <span class="pub-badge">Oct 2024</span>
+        </div>
+        <div class="pub-title">The Pursuit of Quantum Advantage with IBM Quantum Computers: A Perspective and Potential Research Problems</div>
+        <div class="pub-authors"><strong>Laskar, M. R.</strong>, Majumdar, R., Dasgupta, K., Dhinakaran, V., Subramaniam, V.</div>
+        <div class="pub-meta">TechRxiv, October 2024 · IBM Quantum, India</div>
+        <a class="pub-link" href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.173014358.86926254" target="_blank">techrxiv.org →</a>
       </div>
 
       <div class="pub-card" data-cat="journal" data-year="2023">
@@ -731,10 +690,7 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <div class="pub-meta">IEEE Transactions on Vehicular Technology, 70(2): 1688–1698, 2021</div>
       </div>
 
-      <!-- ══════════════════════════════════════════
-           CONFERENCE — all shown when tab clicked,
-           ordered newest → oldest
-           ══════════════════════════════════════════ -->
+      <!-- ══ CONFERENCE ═════════════════════════════════════════════ -->
 
       <div class="pub-card" data-cat="conference" data-year="2023">
         <div class="pub-venue-row">
@@ -1169,7 +1125,7 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <div class="lec-course-num">Lecture 04</div>
         <div class="lec-title">Singular Value Decomposition (SVD)</div>
         <div class="lec-venue">SVD fundamentals and applications in quantum state preparation</div>
-        <a class="lec-link" href="https://sites.google.com/view/rahaman93/lecture?authuser=1#h.p62e3s9c8x9k" target="_blank">Watch Lecture →</a>
+        <a class="lec-link" href="https://www.youtube.com/watch?v=ihG_JZmUwDU&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=23" target="_blank">Watch on YouTube →</a>
       </div>
 
     </div>
@@ -1305,7 +1261,7 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         </div>
         <div class="lec-title">Linear Algebra for Quantum Computing for Beginners</div>
         <div class="lec-venue">UG level tutorial</div>
-        <a class="lec-link" href="#notes-linalg" target="_blank">Download PDF →</a><!-- ADD LINK -->
+        <a class="lec-link" href="https://drive.google.com/file/d/1euhz3hSdDnwBTZ4PLkz0Fv78q7LeR3Rn/view" target="_blank">Download PDF →</a>
       </div>
 
       <div class="lec-card reveal" style="transition-delay:.06s">
@@ -1315,7 +1271,7 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         </div>
         <div class="lec-title">Basis and Factorisation Techniques for Quantum Computing</div>
         <div class="lec-venue">PG level tutorial</div>
-        <a class="lec-link" href="#notes-basis" target="_blank">Download PDF →</a><!-- ADD LINK -->
+        <a class="lec-link" href="https://drive.google.com/file/d/1ZCisD_Vef-iZswoNsDNV49CspimmsWey/view" target="_blank">Download PDF →</a>
       </div>
 
       <div class="lec-card reveal" style="transition-delay:.12s">
@@ -1325,7 +1281,7 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         </div>
         <div class="lec-title">Probability and Quantum Computing Class Notes</div>
         <div class="lec-venue">UG standard</div>
-        <a class="lec-link" href="#notes-prob" target="_blank">Download PDF →</a><!-- ADD LINK -->
+        <a class="lec-link" href="https://drive.google.com/file/d/1FckYa7UzC1nGq9x0SDzLTwAAJYkZ9O7C/view" target="_blank">Download PDF →</a>
       </div>
 
     </div>
@@ -1472,11 +1428,10 @@ document.querySelectorAll('.nav-links a').forEach(a=>{
   a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
 });
 
-// Publications — tab filter + sort
-let currentCat = 'utility';
+// Publications — tab filter (Journal / Conference only)
+let currentCat = 'journal';
 
 function sortCards(cards){
-  // Sort descending by data-year; keeps DOM order as tiebreak
   return Array.from(cards).sort((a,b)=>{
     const ya = parseInt(a.dataset.year||'0');
     const yb = parseInt(b.dataset.year||'0');
@@ -1492,40 +1447,24 @@ function filterPubs(cat, btn){
   const list = document.getElementById('pubList');
   const allCards = list.querySelectorAll('.pub-card');
 
-  if(cat === 'utility'){
-    // Highlight cards always shown first, then remaining utility, no limit
-    allCards.forEach(c=>{
-      const cats = c.dataset.cat||'';
-      const isUtility = cats.split(' ').includes('utility');
-      c.classList.toggle('show', isUtility);
-    });
-    // Re-order: highlighted first, then rest of utility by year desc
-    const highlighted = Array.from(allCards).filter(c=>c.classList.contains('highlight-card') && c.classList.contains('show'));
-    const rest        = sortCards(Array.from(allCards).filter(c=>!c.classList.contains('highlight-card') && c.classList.contains('show')));
-    [...highlighted, ...rest].forEach(c=>list.appendChild(c));
-    document.getElementById('pubMoreWrap').style.display = 'none';
+  // Show matching cards; for journals put highlights first
+  allCards.forEach(c=>c.classList.remove('show'));
+  const matching = Array.from(allCards).filter(c=>(c.dataset.cat||'').split(' ').includes(cat));
 
-  } else if(cat === 'journal' || cat === 'conference'){
-    // Show ALL matching, sorted newest → oldest, no "show more" button
-    allCards.forEach(c=>{
-      const cats = c.dataset.cat||'';
-      c.classList.toggle('show', cats.split(' ').includes(cat));
-    });
-    const matching = sortCards(Array.from(allCards).filter(c=>c.classList.contains('show')));
-    matching.forEach(c=>list.appendChild(c));
-    document.getElementById('pubMoreWrap').style.display = 'none';
-
+  if(cat === 'journal'){
+    const highlighted = matching.filter(c=>c.classList.contains('highlight-card'));
+    const rest = sortCards(matching.filter(c=>!c.classList.contains('highlight-card')));
+    [...highlighted, ...rest].forEach(c=>{ c.classList.add('show'); list.appendChild(c); });
   } else {
-    // 'all' — show everything sorted by year
-    const sorted = sortCards(Array.from(allCards));
-    sorted.forEach(c=>{ c.classList.add('show'); list.appendChild(c); });
-    document.getElementById('pubMoreWrap').style.display = 'none';
+    sortCards(matching).forEach(c=>{ c.classList.add('show'); list.appendChild(c); });
   }
+
+  document.getElementById('pubMoreWrap').style.display = 'none';
 }
 
-// Initialise on load
+// Initialise on load — default to Journal tab
 document.addEventListener('DOMContentLoaded', ()=>{
-  filterPubs('utility', document.querySelector('.pub-tab.utility-tab'));
+  filterPubs('journal', document.querySelector('.pub-tab'));
 });
 
 // Talks toggle
