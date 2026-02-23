@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 :root{
-  /* Primary palette — deep indigo-purple (IBM×Fujitsu inspired) */
+  /* Primary palette — deep indigo-purple (inspired) */
   --red:#3730a3;          /* indigo-700  — replaces crimson everywhere */
   --crimson:#1e1b5e;      /* deep navy-indigo */
   --rose:#818cf8;         /* soft violet — used on dark backgrounds */
@@ -128,6 +128,16 @@ nav{
   transition:border-color .2s,color .2s;
 }
 .btn-ghost:hover{border-color:var(--rose);color:var(--rose);}
+  .btn-email{
+  padding:.62rem 1.5rem;
+  background:#0d9488;color:#fff;
+  border:none;border-radius:6px;
+  font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;
+  cursor:pointer;text-decoration:none;letter-spacing:.03em;
+  box-shadow:0 4px 18px rgba(13,148,136,.35);
+  transition:transform .2s,box-shadow .2s;
+}
+.btn-email:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(13,148,136,.5);}
 
 /* SECTIONS COMMON */
 section{padding:90px 2rem;}
@@ -456,13 +466,14 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
     </div>
 
     <p class="hero-blurb">
-      Quantum computing algorithms and applications on near-term quantum hardware. 20+ peer-reviewed publications and patents, with work in Nature and IEEE Transactions. Author of the book <em>'Ket Zero and Ket One'</em>.
+      Research interest: Quantum computing algorithms and applications on near-term quantum hardware. 20+ peer-reviewed publications and patents as primary contributor. Author of the book <em>'Ket Zero and Ket One'</em>.
     </p>
-    <p class="hero-nqm">India Quantum Ecosystem — Mentor &amp; Industry Expert (India &amp; APAC)</p>
+    <p class="hero-nqm"> Quantum Ecosystem — Mentor &amp; Industry Expert (India (NQM) &amp; APAC)</p>
 
     <div class="hero-cta">
       <a href="https://scholar.google.com/citations?user=_ZZbn1MAAAAJ&hl=en" target="_blank" class="btn-primary">Google Scholar</a>
       <a href="https://www.linkedin.com/in/mostafizur-rahaman-phd-0698b3a6/" target="_blank" class="btn-ghost">LinkedIn</a>
+      <a href="mailto:rahaman1@ibm.com" class="btn-email">Email</a>
     </div>
 
   </div>
