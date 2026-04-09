@@ -3,429 +3,374 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Mostafizur Rahaman | IBM Quantum Research Scientist</title>
-<meta name="description" content="Research Scientist at IBM Quantum Division. Quantum algorithms and applications on near-term quantum hardware."/>
+<title>Mostafizur Rahaman | Quantum Computing Researcher</title>
+<meta name="description" content="Quantum computing researcher at IBM Research. Algorithms and applications on near-term quantum hardware."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-:root{
-  /* Primary palette — deep indigo-purple (inspired) */
-  --red:#3730a3;          /* indigo-700  — replaces crimson everywhere */
-  --crimson:#1e1b5e;      /* deep navy-indigo */
-  --rose:#818cf8;         /* soft violet — used on dark backgrounds */
-  --teal:#14b8a6;         /* teal accent */
-  --grad:linear-gradient(135deg,#1e1b5e 0%,#3730a3 55%,#6366f1 100%);
-  --dark-900:#0d0c1d;     /* near-black with deep blue tint */
-  --dark-800:#13122a;
-  --dark-700:#1e1d3a;
-  --grey-700:#3d3d55;--grey-500:#7a7a9a;--grey-300:#b0b0c8;
-  --grey-200:#e4e4ef;--grey-100:#f5f5fa;--white:#ffffff;
+:root {
+  --ink: #1a1a1a;
+  --ink-mid: #444;
+  --ink-light: #777;
+  --ink-faint: #aaa;
+  --accent: #1a5276;       /* calm academic navy */
+  --accent-mid: #2e86c1;
+  --accent-light: #d6eaf8;
+  --rule: #ddd;
+  --bg: #ffffff;
+  --bg-alt: #f8f9fa;
+  --red-badge: #c0392b;
+  --green-badge: #1a7a4a;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--grey-700);overflow-x:hidden}
-
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:999;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 3rem;height:64px;
-  background:rgba(17,17,20,0.96);backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(200,0,30,0.18);
-}
-.nav-wordmark{
-  font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;
-  color:var(--white);letter-spacing:.02em;
-}
-.nav-wordmark span{color:var(--rose);}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{
-  font-size:.82rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s;
-}
-.nav-links a:hover{color:var(--rose)}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:.3rem}
-.hamburger span{display:block;width:22px;height:2px;background:rgba(255,255,255,.65);border-radius:2px;transition:.3s}
-
-/* HERO */
-#hero{
-  min-height:100vh;background:var(--dark-900);
-  position:relative;overflow:hidden;
-  display:flex;align-items:center;
-  padding:120px 2rem 90px;
-}
-.hero-glow{
-  position:absolute;width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(200,0,30,0.16) 0%,transparent 65%);
-  top:-200px;right:-120px;pointer-events:none;
-}
-.hero-glow2{
-  position:absolute;width:350px;height:350px;border-radius:50%;
-  background:radial-gradient(circle,rgba(232,41,90,0.09) 0%,transparent 65%);
-  bottom:-60px;left:5%;pointer-events:none;
-}
-.hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;width:100%;}
-
-.hero-role{
-  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--rose);margin-bottom:1.6rem;
-}
-.hero-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,6vw,5.2rem);font-weight:700;line-height:1.04;
-  color:var(--white);margin-bottom:.4rem;
-}
-.hero-dr{
-  font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;
-  font-size:clamp(1.6rem,3vw,2.4rem);color:rgba(255,255,255,.6);
-  display:block;margin-bottom:.2rem;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-.affil-block{margin-top:2.2rem;}
-.affil-head{
-  font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--rose);margin-bottom:.5rem;
+/* ── NAV ─────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+  background: rgba(255,255,255,0.97);
+  border-bottom: 1px solid var(--rule);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 3rem; height: 56px;
 }
-.affil-primary{font-size:1.08rem;font-weight:500;color:var(--white);line-height:1.5;margin-bottom:1.6rem;}
-.affil-honorary-head{
-  font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:#7dd3c8;margin-bottom:.7rem;
-  padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.1);
+.nav-wordmark {
+  font-family: 'Lora', serif;
+  font-size: 1rem; font-weight: 600;
+  color: var(--accent); letter-spacing: .01em;
+  text-decoration: none;
 }
-.affil-honorary-list{list-style:none;display:flex;flex-direction:column;gap:.5rem;}
-.affil-honorary-list li{
-  font-size:.9rem;color:rgba(255,255,255,.82);line-height:1.6;
-  padding-left:1.1rem;position:relative;
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links a {
+  font-size: .82rem; font-weight: 500; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--ink-mid);
+  text-decoration: none; transition: color .15s;
 }
-.affil-honorary-list li::before{
-  content:'';position:absolute;left:0;top:.6em;
-  width:5px;height:5px;border-radius:50%;background:#7dd3c8;flex-shrink:0;
+.nav-links a:hover { color: var(--accent); }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: .3rem;
 }
-
-.hero-blurb{
-  margin-top:2.2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);
-  font-size:.95rem;color:rgba(255,255,255,.78);line-height:1.9;max-width:680px;
-}
-.hero-nqm{
-  margin-top:.65rem;font-size:.86rem;font-style:italic;
-  color:#f9c46b;
-}
-.hero-cta{display:flex;gap:.9rem;flex-wrap:wrap;margin-top:2rem;}
-.btn-primary{
-  padding:.62rem 1.5rem;background:var(--grad);color:#fff;
-  border:none;border-radius:6px;
-  font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;
-  cursor:pointer;text-decoration:none;letter-spacing:.03em;
-  box-shadow:0 4px 18px rgba(200,0,30,.3);transition:transform .2s,box-shadow .2s;
-}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(200,0,30,.45);}
-.btn-ghost{
-  padding:.62rem 1.5rem;color:rgba(255,255,255,.6);
-  border:1.5px solid rgba(255,255,255,.18);border-radius:6px;
-  font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:500;
-  cursor:pointer;text-decoration:none;letter-spacing:.03em;
-  transition:border-color .2s,color .2s;
-}
-.btn-ghost:hover{border-color:var(--rose);color:var(--rose);}
-  .btn-email{
-  padding:.62rem 1.5rem;
-  background:#0d9488;color:#fff;
-  border:none;border-radius:6px;
-  font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:600;
-  cursor:pointer;text-decoration:none;letter-spacing:.03em;
-  box-shadow:0 4px 18px rgba(13,148,136,.35);
-  transition:transform .2s,box-shadow .2s;
-}
-.btn-email:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(13,148,136,.5);}
-
-/* SECTIONS COMMON */
-section{padding:90px 2rem;}
-.container{max-width:1060px;margin:0 auto;}
-.section-tag{
-  display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--red);
-  background:rgba(200,0,30,.07);padding:.26rem .82rem;border-radius:999px;margin-bottom:.85rem;
-}
-.section-title{
-  font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.7rem);
-  font-weight:700;color:var(--dark-900);line-height:1.15;margin-bottom:.55rem;
-}
-.divider{width:46px;height:3px;background:var(--grad);border-radius:3px;margin:1rem 0 2.5rem;}
-.section-subtitle{font-size:.93rem;color:var(--grey-500);max-width:540px;line-height:1.8;}
-
-/* ABOUT */
-#about{background:var(--white);}
-.about-grid{display:grid;grid-template-columns:3fr 2fr;gap:4rem;align-items:start;}
-.about-text p{font-size:.96rem;line-height:1.9;color:var(--grey-700);margin-bottom:1.1rem;}
-.about-text strong{color:var(--dark-900);}
-
-.edu-title{
-  font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;
-  color:var(--dark-900);margin-bottom:1.6rem;
-}
-.edu-item{
-  position:relative;padding-left:1.6rem;margin-bottom:2.2rem;
-}
-.edu-item:not(:last-child)::before{
-  content:'';position:absolute;left:3px;top:16px;bottom:-2.2rem;
-  width:1.5px;background:linear-gradient(to bottom,var(--red) 0%,rgba(200,0,30,0.06) 100%);
-}
-.edu-item::after{
-  content:'';position:absolute;left:-3px;top:7px;
-  width:10px;height:10px;border-radius:50%;background:var(--red);
-  box-shadow:0 0 0 3px rgba(200,0,30,.12);
-}
-.edu-degree{font-size:.94rem;font-weight:700;color:var(--dark-900);margin-bottom:.2rem;}
-.edu-inst{font-size:.83rem;color:var(--red);font-weight:600;margin-bottom:.6rem;}
-.edu-sub{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-500);margin-top:.5rem;margin-bottom:.15rem;}
-.edu-body{font-size:.84rem;color:var(--grey-700);line-height:1.7;}
-
-/* PUBLICATIONS */
-#publications{background:var(--grey-100);}
-.pub-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
-.pub-tab{
-  padding:.48rem 1.15rem;border-radius:5px;font-size:.82rem;font-weight:600;
-  cursor:pointer;border:none;font-family:'Outfit',sans-serif;letter-spacing:.03em;
-  transition:background .2s,color .2s,border-color .2s;
-  background:var(--white);color:var(--grey-700);border:1.5px solid var(--grey-200);
-}
-.pub-tab:hover{background:var(--red);color:#fff;border-color:transparent;}
-.pub-tab.active{background:var(--red);color:#fff;border-color:transparent;}
-.pub-tab.utility-tab:not(.active){
-  background:var(--dark-900);color:var(--rose);border:1.5px solid rgba(232,41,90,.25);
-}
-.pub-tab.utility-tab.active{background:var(--crimson);color:#fff;border-color:transparent;}
-
-.pub-list{display:flex;flex-direction:column;gap:1rem;}
-.pub-card{
-  background:var(--white);padding:1.4rem 1.6rem;border-radius:9px;
-  border:1px solid var(--grey-200);transition:border-color .2s,box-shadow .2s;
-  display:none;
-}
-.pub-card.show{display:block;}
-.pub-card:hover{border-color:rgba(200,0,30,.22);box-shadow:0 5px 20px rgba(0,0,0,.05);}
-.pub-venue-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;margin-bottom:.65rem;}
-.pub-venue{
-  font-size:.69rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  padding:.2rem .6rem;border-radius:4px;
-}
-.venue-nature{background:#dcfce7;color:#166534;}
-.venue-ieee{background:#dbeafe;color:#1e40af;}
-.venue-arxiv{background:#f3e8ff;color:#6b21a8;}
-.venue-conf{background:#fef3c7;color:#92400e;}
-.pub-badge{
-  font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-  padding:.18rem .55rem;border-radius:4px;
-  background:rgba(200,0,30,.07);color:var(--red);
-}
-.pub-title{font-size:.95rem;font-weight:600;color:var(--dark-900);line-height:1.55;margin-bottom:.45rem;}
-.pub-authors{font-size:.83rem;color:var(--grey-500);margin-bottom:.3rem;}
-.pub-meta{font-size:.79rem;color:var(--grey-500);}
-.pub-link{
-  display:inline-block;margin-top:.65rem;
-  font-size:.81rem;font-weight:600;color:var(--red);text-decoration:none;
-  transition:opacity .2s;
-}
-.pub-link:hover{opacity:.7;}
-/* Highlighted utility card */
-.highlight-card{
-  border:1.5px solid rgba(99,102,241,.3) !important;
-  background:linear-gradient(to bottom right,#fff 82%,rgba(99,102,241,.05)) !important;
-}
-.highlight-card .pub-title{color:var(--dark-900);}
-.new-badge{
-  background:var(--red) !important;color:#fff !important;
-  animation:pulse 2s ease-in-out infinite;
-}
-/* Quantum Utility badge */
-.badge-utility{
-  font-size:.67rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  padding:.18rem .6rem;border-radius:4px;
-  background:linear-gradient(90deg,#1e1b5e,#6366f1);color:#fff;
-}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
-
-.more-wrap{margin-top:1.5rem;text-align:center;}
-.btn-show{
-  padding:.58rem 1.5rem;background:transparent;color:var(--red);
-  border:1.5px solid var(--red);border-radius:6px;
-  font-size:.83rem;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;
-  transition:background .2s,color .2s;
-}
-.btn-show:hover{background:var(--red);color:#fff;}
-
-/* PATENTS */
-#patents{background:var(--white);}
-.patents-list{display:flex;flex-direction:column;gap:.85rem;}
-.patent-card{
-  display:flex;align-items:flex-start;gap:1rem;
-  padding:1.1rem 1.4rem;background:var(--grey-100);border-radius:8px;
-  border:1px solid var(--grey-200);transition:border-color .2s;
-}
-.patent-card:hover{border-color:rgba(200,0,30,.22);}
-.pat-status{
-  font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  padding:.18rem .6rem;border-radius:4px;display:inline-block;margin-bottom:.28rem;white-space:nowrap;
-}
-.status-granted{background:#dcfce7;color:#166534;}
-.status-filed{background:#fef3c7;color:#92400e;}
-.pat-num{font-size:.74rem;font-weight:600;color:var(--grey-500);margin-bottom:.22rem;display:block;}
-.pat-title{font-size:.91rem;font-weight:600;color:var(--dark-900);line-height:1.5;}
-.pat-meta{font-size:.79rem;color:var(--grey-500);margin-top:.28rem;}
-
-/* TALKS */
-#talks{background:var(--grey-100);}
-.talks-list{display:flex;flex-direction:column;gap:.85rem;}
-.talk-card{
-  background:var(--white);padding:1.2rem 1.5rem;border-radius:8px;
-  border:1px solid var(--grey-200);transition:border-color .2s,box-shadow .2s;
-  display:none;
-}
-.talk-card.show{display:block;}
-.talk-card:hover{border-color:rgba(200,0,30,.2);box-shadow:0 4px 14px rgba(0,0,0,.04);}
-.talk-row{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
-.talk-left{flex:1;min-width:0;}
-.talk-type{font-size:.69rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--red);margin-bottom:.28rem;}
-.talk-title{font-size:.93rem;font-weight:600;color:var(--dark-900);line-height:1.5;margin-bottom:.22rem;}
-.talk-venue{font-size:.82rem;color:var(--grey-500);}
-.talk-link{font-size:.8rem;color:var(--red);text-decoration:none;font-weight:600;display:inline-block;margin-top:.28rem;}
-.talk-link:hover{text-decoration:underline;}
-.talk-date{
-  font-size:.78rem;font-weight:600;color:var(--grey-500);white-space:nowrap;flex-shrink:0;
-  background:var(--grey-100);padding:.28rem .75rem;border-radius:4px;margin-top:.1rem;
+.hamburger span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--ink-mid); border-radius: 2px;
 }
 
-/* LECTURES */
-.lec-section-label{
-  font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;
-  color:var(--dark-900);margin:2.8rem 0 1.2rem;
-  padding-bottom:.5rem;border-bottom:2px solid var(--grey-200);
+/* ── HERO ────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  background: linear-gradient(160deg, #f0f4f8 0%, #e8f0f7 55%, #fafbfc 100%);
+  display: flex; align-items: center;
+  padding: 120px 2rem 80px;
+  border-bottom: 1px solid var(--rule);
 }
-.lec-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:1rem;margin-bottom:.5rem;
+.hero-inner {
+  max-width: 820px; margin: 0 auto; width: 100%;
 }
-.lec-card{
-  padding:1.2rem 1.4rem;border-radius:8px;
-  background:var(--white);border:1px solid var(--grey-200);
-  transition:border-color .2s,box-shadow .2s;
+.hero-name {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 600; color: var(--ink);
+  line-height: 1.15; margin-bottom: .3rem;
 }
-.lec-card:hover{border-color:rgba(200,0,30,.22);box-shadow:0 4px 16px rgba(0,0,0,.05);}
-.lec-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.6rem;}
-.lec-tag{
-  font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-  padding:.2rem .6rem;border-radius:3px;
+.hero-role {
+  font-size: 1rem; color: var(--ink-mid); font-weight: 400;
+  margin-bottom: 1.8rem;
 }
-.tag-computing{background:#dbeafe;color:#1e40af;}
-.tag-info{background:#f3e8ff;color:#6b21a8;}
-.tag-comm{background:#dcfce7;color:#166534;}
-.tag-ml{background:#fef3c7;color:#92400e;}
-.tag-hardware{background:#ffe4e6;color:#9f1239;}
-.tag-math{background:#f0fdf4;color:#14532d;}
-.lec-title{font-size:.93rem;font-weight:600;color:var(--dark-900);line-height:1.5;margin-bottom:.3rem;}
-.lec-venue{font-size:.8rem;color:var(--grey-500);margin-bottom:.3rem;}
-.lec-meta{font-size:.75rem;color:var(--grey-300);font-weight:600;letter-spacing:.04em;}
-.lec-course-num{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.35rem;}
-.lec-link{
-  display:inline-block;font-size:.8rem;font-weight:600;color:var(--red);
-  text-decoration:none;margin-top:.5rem;
+.hero-affil {
+  margin-bottom: 1.6rem;
 }
-.lec-link:hover{text-decoration:underline;}
+.affil-primary {
+  font-size: .95rem; color: var(--ink-mid);
+  line-height: 1.9;
+}
+.affil-honorary {
+  margin-top: .6rem;
+  font-size: .88rem; color: var(--ink-light);
+  line-height: 1.85;
+  padding-left: 1rem;
+  border-left: 2px solid var(--rule);
+}
+.hero-bio {
+  font-size: .96rem;
+  color: var(--ink-mid);
+  line-height: 1.9;
+  max-width: 680px;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  margin-bottom: 1.8rem;
+}
+.hero-cta { display: flex; gap: .75rem; flex-wrap: wrap; }
+.btn { 
+  padding: .45rem 1.1rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .83rem; font-weight: 600;
+  letter-spacing: .03em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all .15s;
+  cursor: pointer; border: none;
+}
+.btn-primary {
+  background: var(--accent); color: #fff;
+}
+.btn-primary:hover { background: var(--accent-mid); }
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+.btn-ghost:hover { background: var(--accent-light); }
 
-/* TEACHING */
-#teaching{background:var(--white);}
-.teaching-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
-.teach-card{
-  padding:1.3rem 1.4rem;border-radius:8px;
-  background:var(--grey-100);border:1px solid var(--grey-200);
+/* ── SECTIONS ────────────────────────────────── */
+section { padding: 72px 2rem; }
+.container { max-width: 820px; margin: 0 auto; }
+.sec-label {
+  font-size: .72rem; font-weight: 600; letter-spacing: .13em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: .5rem;
 }
-.teach-card h4{font-size:.93rem;font-weight:600;color:var(--dark-900);margin-bottom:.22rem;}
-.teach-org{font-size:.8rem;color:var(--red);font-weight:500;margin-bottom:.28rem;}
-.teach-period{font-size:.7rem;color:var(--grey-500);letter-spacing:.05em;font-weight:600;text-transform:uppercase;}
-.teach-desc{font-size:.85rem;color:var(--grey-700);margin-top:.45rem;line-height:1.65;}
+.sec-title {
+  font-family: 'Lora', serif;
+  font-size: 1.6rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 1.4rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid var(--rule);
+}
 
-.book-card{
-  margin-top:2rem;padding:1.5rem 1.7rem;border-radius:10px;
-  background:var(--dark-900);border:1px solid rgba(200,0,30,.18);
+/* ── PUBLICATIONS ────────────────────────────── */
+#publications { background: var(--bg-alt); }
+.pub-tabs { display: flex; gap: .5rem; margin-bottom: 1.6rem; flex-wrap: wrap; }
+.pub-tab {
+  padding: .35rem .95rem;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: .8rem; font-weight: 600;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  background: #fff; color: var(--ink-mid);
+  cursor: pointer; transition: all .15s;
 }
-.book-card h4{font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.4rem;line-height:1.4;}
-.book-card p{font-size:.87rem;color:rgba(255,255,255,.48);line-height:1.75;margin-bottom:.8rem;}
-.book-link{
-  display:inline-block;font-size:.82rem;font-weight:600;
-  color:var(--rose);text-decoration:none;letter-spacing:.03em;
-}
-.book-link:hover{text-decoration:underline;}
+.pub-tab:hover { border-color: var(--accent); color: var(--accent); }
+.pub-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-/* AWARDS */
-#awards{background:var(--dark-900);}
-#awards .section-title{color:var(--white);}
-.awards-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));
-  gap:1rem;margin-top:2.2rem;
+.pub-list { display: flex; flex-direction: column; gap: 0; }
+.pub-item {
+  display: none;
+  padding: .9rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .91rem;
 }
-.award-card{
-  padding:1.35rem 1.4rem;border-radius:9px;
-  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);
-  transition:background .2s,border-color .2s;
+.pub-item.show { display: block; }
+.pub-item:first-child { border-top: 1px solid var(--rule); }
+.pub-venue-row { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; margin-bottom: .2rem; }
+.pub-venue {
+  font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase;
+  padding: .1rem .45rem; border-radius: 2px;
 }
-.award-card:hover{background:rgba(200,0,30,.09);border-color:rgba(200,0,30,.25);}
-.award-year{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:.38rem;}
-.award-title{font-size:.92rem;font-weight:600;color:var(--white);line-height:1.5;margin-bottom:.28rem;}
-.award-org{font-size:.8rem;color:rgba(255,255,255,.38);line-height:1.65;}
-
-/* PRESS */
-#press{background:var(--grey-100);}
-.press-list{display:flex;flex-direction:column;gap:.75rem;max-width:660px;}
-.press-item{
-  display:flex;align-items:flex-start;gap:1rem;
-  padding:1rem 1.3rem;background:var(--white);border-radius:8px;
-  border:1px solid var(--grey-200);text-decoration:none;color:inherit;
-  transition:border-color .2s;
+.venue-nature { background: #d5f5e3; color: #1e8449; }
+.venue-ieee   { background: #d6eaf8; color: #1a5276; }
+.venue-arxiv  { background: #e8daef; color: #6c3483; }
+.venue-conf   { background: #fef9e7; color: #7d6608; }
+.pub-badge {
+  font-size: .68rem; font-weight: 600; letter-spacing: .04em;
+  color: var(--ink-faint);
 }
-.press-item:hover{border-color:rgba(200,0,30,.28);}
-.press-source{font-size:.68rem;color:var(--grey-500);font-weight:700;letter-spacing:.07em;text-transform:uppercase;margin-bottom:.18rem;}
-.press-title{font-size:.9rem;font-weight:600;color:var(--dark-900);line-height:1.5;}
-
-/* FOOTER */
-footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top:1px solid rgba(255,255,255,.05);}
-.footer-name{
-  font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;
-  background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;margin-bottom:.3rem;
+.pub-title {
+  font-weight: 600; color: var(--ink); line-height: 1.5;
+  margin-bottom: .15rem;
 }
-.footer-role{font-size:.83rem;color:rgba(255,255,255,.35);margin-bottom:1.3rem;}
-.footer-links{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin-bottom:1.4rem;}
-.footer-links a{font-size:.83rem;font-weight:500;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
-.footer-links a:hover{color:var(--rose);}
-.footer-copy{font-size:.73rem;color:rgba(255,255,255,.18);}
+.pub-authors { font-size: .85rem; color: var(--ink-light); margin-bottom: .1rem; }
+.pub-meta    { font-size: .82rem; color: var(--ink-faint); }
+.pub-link    {
+  font-size: .8rem; font-weight: 600; color: var(--accent);
+  text-decoration: none; margin-left: .4rem;
+}
+.pub-link:hover { text-decoration: underline; }
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1);}
-.reveal.visible{opacity:1;transform:translateY(0);}
+.show-more-wrap { margin-top: 1rem; }
+.btn-text {
+  font-size: .83rem; font-weight: 600; color: var(--accent);
+  background: none; border: none; cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 0; text-decoration: underline;
+}
 
-/* RESPONSIVE */
-@media(max-width:900px){
-  nav{padding:0 1.4rem;}
-  .nav-links{display:none;}
-  .hamburger{display:flex;}
-  .nav-links.open{
-    display:flex;flex-direction:column;gap:.2rem;
-    position:absolute;top:64px;left:0;right:0;
-    background:var(--dark-900);padding:.9rem 1.5rem;
-    border-top:1px solid rgba(255,255,255,.06);
+/* ── PATENTS ─────────────────────────────────── */
+#patents { background: var(--bg); }
+.simple-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.simple-item {
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .91rem;
+}
+.simple-item:first-child { border-top: 1px solid var(--rule); }
+.item-status {
+  display: inline-block;
+  font-size: .67rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: .1rem .4rem; border-radius: 2px; margin-right: .5rem;
+}
+.status-granted { background: #d5f5e3; color: var(--green-badge); }
+.status-filed   { background: #fef9e7; color: #7d6608; }
+.item-title { font-weight: 600; color: var(--ink); line-height: 1.5; }
+.item-meta  { font-size: .82rem; color: var(--ink-faint); margin-top: .1rem; }
+
+/* ── TALKS ───────────────────────────────────── */
+#talks { background: var(--bg-alt); }
+.talk-item {
+  display: none;
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .91rem;
+  display: none;
+}
+.talk-item.show { display: flex; gap: 1rem; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+.talk-item:first-child { border-top: 1px solid var(--rule); }
+.talk-left { flex: 1; min-width: 0; }
+.talk-type { font-size: .7rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); margin-bottom: .1rem; }
+.talk-title { font-weight: 600; color: var(--ink); line-height: 1.5; }
+.talk-venue { font-size: .85rem; color: var(--ink-light); }
+.talk-link  { font-size: .8rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+.talk-link:hover { text-decoration: underline; }
+.talk-date  { font-size: .8rem; color: var(--ink-faint); white-space: nowrap; flex-shrink: 0; }
+
+/* ── TEACHING ────────────────────────────────── */
+#teaching { background: var(--bg); }
+.teach-item {
+  padding: .75rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .91rem;
+}
+.teach-item:first-child { border-top: 1px solid var(--rule); }
+.teach-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .5rem; }
+.teach-title { font-weight: 600; color: var(--ink); }
+.teach-period { font-size: .8rem; color: var(--ink-faint); white-space: nowrap; }
+.teach-detail { font-size: .87rem; color: var(--ink-light); margin-top: .1rem; }
+
+.subsec { margin-top: 2.2rem; }
+.subsec-title {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--ink); margin-bottom: 1rem;
+  padding-bottom: .4rem;
+  border-bottom: 1px solid var(--rule);
+}
+.lec-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: .7rem; margin-bottom: .5rem;
+}
+.lec-card {
+  padding: .8rem 1rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--bg-alt);
+  font-size: .87rem;
+}
+.lec-tag {
+  font-size: .65rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: .1rem .4rem; border-radius: 2px;
+  margin-right: .3rem; margin-bottom: .4rem; display: inline-block;
+}
+.tag-math    { background: #d5f5e3; color: #1e8449; }
+.tag-alg     { background: #d6eaf8; color: #1a5276; }
+.tag-comm    { background: #e8daef; color: #6c3483; }
+.tag-info    { background: #fef9e7; color: #7d6608; }
+.lec-num     { font-size: .7rem; color: var(--ink-faint); margin-bottom: .2rem; font-weight: 600; letter-spacing: .04em; }
+.lec-title   { font-weight: 600; color: var(--ink); line-height: 1.45; margin-bottom: .15rem; }
+.lec-link    { font-size: .78rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+.lec-link:hover { text-decoration: underline; }
+
+.book-row {
+  margin-top: 1.6rem;
+  padding: .9rem 1.1rem;
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--bg-alt);
+  font-size: .91rem;
+  display: flex; gap: 1rem; align-items: baseline; flex-wrap: wrap;
+}
+.book-title { font-weight: 600; color: var(--ink); }
+.book-desc  { font-size: .85rem; color: var(--ink-light); }
+.book-link  { font-size: .82rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+.book-link:hover { text-decoration: underline; }
+
+/* ── AWARDS ──────────────────────────────────── */
+#awards { background: var(--bg-alt); }
+.award-item {
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .91rem;
+  display: flex; gap: .8rem; align-items: baseline; flex-wrap: wrap;
+}
+.award-item:first-child { border-top: 1px solid var(--rule); }
+.award-year { font-size: .78rem; color: var(--ink-faint); white-space: nowrap; flex-shrink: 0; min-width: 80px; }
+.award-title { font-weight: 600; color: var(--ink); }
+.award-org  { font-size: .85rem; color: var(--ink-light); }
+
+/* ── PRESS ───────────────────────────────────── */
+#press { background: var(--bg); }
+.press-item {
+  padding: .7rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: .91rem;
+  display: flex; gap: .8rem; align-items: baseline; flex-wrap: wrap;
+  text-decoration: none; color: inherit;
+}
+.press-item:first-child { border-top: 1px solid var(--rule); }
+.press-source { font-size: .75rem; font-weight: 700; color: var(--ink-faint); white-space: nowrap; flex-shrink: 0; min-width: 160px; text-transform: uppercase; letter-spacing: .04em; }
+.press-title { color: var(--accent); font-weight: 500; }
+.press-title:hover { text-decoration: underline; }
+
+/* ── FOOTER ──────────────────────────────────── */
+footer {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--rule);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.footer-name {
+  font-family: 'Lora', serif;
+  font-size: 1.1rem; font-weight: 600;
+  color: var(--accent); margin-bottom: .2rem;
+}
+.footer-sub { font-size: .83rem; color: var(--ink-light); margin-bottom: 1rem; }
+.footer-links { display: flex; justify-content: center; gap: 1.6rem; flex-wrap: wrap; margin-bottom: .8rem; }
+.footer-links a { font-size: .82rem; color: var(--accent); text-decoration: none; }
+.footer-links a:hover { text-decoration: underline; }
+.footer-copy { font-size: .73rem; color: var(--ink-faint); }
+
+/* ── REVEAL ──────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media(max-width: 860px) {
+  nav { padding: 0 1.2rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .nav-links.open {
+    display: flex; flex-direction: column; gap: .2rem;
+    position: absolute; top: 56px; left: 0; right: 0;
+    background: #fff; padding: .8rem 1.4rem;
+    border-bottom: 1px solid var(--rule);
   }
-  .about-grid{grid-template-columns:1fr;}
-  .teaching-grid{grid-template-columns:1fr;}
 }
-@media(max-width:600px){section{padding:60px 1.2rem;}}
+@media(max-width: 600px) { section { padding: 52px 1.2rem; } }
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav id="navbar">
-  <div class="nav-wordmark">Mostafizur <span>Rahaman</span></div>
+  <a class="nav-wordmark" href="#hero">Mostafizur Rahaman</a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#publications">Publications</a></li>
@@ -442,91 +387,58 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-glow2"></div>
   <div class="hero-inner">
+    <h1 class="hero-name">Mostafizur Rahaman</h1>
+    <p class="hero-role">Research Scientist, Quantum Division — IBM Research</p>
 
-    <p class="hero-role">Quantum Computing Researcher</p>
-
-    <h1 class="hero-name">
-      <span class="hero-dr">Dr.</span>
-      Mostafizur Rahaman
-    </h1>
-
-    <div class="affil-block">
-      <div class="affil-head">Primary Affiliation</div>
-      <div class="affil-primary">Research Scientist, Quantum Division, IBM Research</div>
-
-      <div class="affil-honorary-head">Honorary Positions</div>
-      <ul class="affil-honorary-list">
-        <li>Visiting Scientist, Quantum Information Physics Theory Lab, RIKEN, Japan</li>
-        <li>Adjunct Fellow Professor, S N Bose National Centre for Basic Sciences, Kolkata</li>
-        <li>Visiting Fellow, Dept. of ECE, IISc, Bangalore</li>
-      </ul>
+    <div class="hero-affil">
+      <div class="affil-primary">
+        Research Scientist, IBM Research (Quantum Division)<br>
+      </div>
+      <div class="affil-honorary">
+        Visiting Scientist, Quantum Information Physics Theory Lab, RIKEN, Japan<br>
+        Adjunct Fellow, S N Bose National Centre for Basic Sciences, Kolkata<br>
+        Visiting Fellow, Dept. of ECE, IISc, Bangalore
+      </div>
     </div>
 
-    <p class="hero-blurb">
-      Research interest: Quantum computing algorithms and applications on near-term quantum hardware. 20+ peer-reviewed publications and patents as primary contributor. Author of the book <em>'Ket Zero and Ket One'</em>.
+    <p class="hero-bio">
+      Mostafizur Rahaman completed his MS (Research) and PhD from IIT Kharagpur as a Prime Minister's Research Fellow, working on quantum algorithms for structured Hamiltonian operators and their applications in signal processing. His current research is focused on quantum simulation, quantum optimization, and quantum machine learning on near-term hardware. He is also interested in quantum communication and information-theoretic aspects of quantum systems.
     </p>
-    <p class="hero-nqm"> Quantum Ecosystem — Mentor &amp; Industry Expert (India (NQM) &amp; APAC)</p>
 
     <div class="hero-cta">
-      <a href="https://scholar.google.com/citations?user=_ZZbn1MAAAAJ&hl=en" target="_blank" class="btn-primary">Google Scholar</a>
-      <a href="https://www.linkedin.com/in/mostafizur-rahaman-phd-0698b3a6/" target="_blank" class="btn-ghost">LinkedIn</a>
-      <a href="mailto:rahaman1@ibm.com" class="btn-email">Email</a>
+      <a href="https://scholar.google.com/citations?user=_ZZbn1MAAAAJ&hl=en" target="_blank" class="btn btn-primary">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/mostafizur-rahaman-phd-0698b3a6/" target="_blank" class="btn btn-ghost">LinkedIn</a>
+      <a href="mailto:rahaman1@ibm.com" class="btn btn-ghost">Email</a>
     </div>
-
   </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT / ACADEMIC -->
 <section id="about">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag">About</span>
-      <h2 class="section-title">Brief Bio</h2>
-      <div class="divider"></div>
+      <div class="sec-label">Education</div>
+      <h2 class="sec-title">Academic Background</h2>
     </div>
-    <div class="about-grid">
 
-      <div class="about-text reveal">
-        <p>Dr. Mostafizur Rahaman is a Research Scientist at the Quantum Division, IBM Research. His research interests are primarily on quantum computing algorithms and applications on near-term quantum hardware. He has authored <strong>20+ peer-reviewed publications and patents</strong> as primary contributor, with work appearing in leading venues including <strong>Nature</strong> and <strong>IEEE Transactions</strong>. He received the <strong>Distinguished Research Paper Award</strong> from IBM Research in 2024, across all divisions.</p>
-        <p>He is a Visiting Scientist at the Quantum Information Physics Theory Group, RIKEN, Japan. He also serves as a Visiting Fellow in the Dept. of ECE, IISc, Bangalore, and an Adjunct Faculty at S N Bose National Centre for Basic Sciences, Kolkata.</p>
-        <p>Dr. Rahaman earned his MS (Research) and PhD (in quantum optimization) from IIT Kharagpur as a <strong>Prime Minister's Research Fellow</strong>, where he received national commendations for doctoral research.</p>
-        <p>Currently, he serves as a <strong>mentor and industry expert</strong> associated with the National Quantum Mission to support and enable the India and APAC quantum ecosystem.</p>
-      </div>
-
-      <div class="reveal" style="transition-delay:.14s">
-        <div class="edu-title">Academic</div>
-
-        <div class="edu-item">
-          <div class="edu-degree">PhD — Quantum Optimization</div>
-          <div class="edu-inst">IIT Kharagpur · Prime Minister's Research Fellow</div>
-          <div class="edu-sub">Thesis</div>
-          <div class="edu-body">Quantum Algorithms and Architecture for Structured Hamiltonian Operators with Efficient Gate Complexity and its Application to Signal Processing</div>
-          <div class="edu-sub" style="margin-top:.5rem">Timeline</div>
-          <div class="edu-body">
-            Admission: Sept. 2020<br>
-            Thesis Submission: Oct. 2023<br>
-            Defense Viva &amp; Degree: Feb. 2025
-          </div>
+    <ul class="simple-list reveal" style="transition-delay:.08s">
+      <li class="simple-item">
+        <div class="item-title">PhD — Quantum Optimization &amp; Algorithms · IIT Kharagpur</div>
+        <div class="item-meta">
+          Prime Minister's Research Fellow &nbsp;·&nbsp;
+          Thesis: <em>Quantum Algorithms and Architecture for Structured Hamiltonian Operators with Efficient Gate Complexity and its Application to Signal Processing</em><br>
+          Admitted Sept. 2020 &nbsp;·&nbsp; Submitted Oct. 2023 &nbsp;·&nbsp; Degree Feb. 2025
         </div>
-
-        <div class="edu-item">
-          <div class="edu-degree">MS  (Research) </div>
-          <div class="edu-inst">IIT Kharagpur </div>
-          <div class="edu-sub">Thesis</div>
-          <div class="edu-body">Classification, Regularization, and Estimation of Target Parameters in Cognitive Radar</div>
-          <div class="edu-sub" style="margin-top:.5rem">Timeline</div>
-          <div class="edu-body">
-            Admission: Jan. 2018<br>
-            Thesis Submission: Feb. 2020<br>
-            Defense Viva: Sept. 2020
-          </div>
+      </li>
+      <li class="simple-item">
+        <div class="item-title">MS (Research) · IIT Kharagpur</div>
+        <div class="item-meta">
+          Thesis: <em>Classification, Regularization, and Estimation of Target Parameters in Cognitive Radar</em><br>
+          Admitted Jan. 2018 &nbsp;·&nbsp; Submitted Feb. 2020 &nbsp;·&nbsp; Viva Sept. 2020
         </div>
-      </div>
-
-    </div>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -534,78 +446,69 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
 <section id="publications">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag">Research</span>
-      <h2 class="section-title">Publications</h2>
-      <div class="divider"></div>
+      <div class="sec-label">Research</div>
+      <h2 class="sec-title">Publications</h2>
     </div>
 
-    <div class="pub-tabs reveal" style="transition-delay:.1s">
+    <div class="pub-tabs reveal" style="transition-delay:.06s">
       <button class="pub-tab active" onclick="filterPubs('journal',this)">Journals</button>
       <button class="pub-tab" onclick="filterPubs('conference',this)">Conference</button>
     </div>
 
-    <div class="pub-list reveal" style="transition-delay:.16s" id="pubList">
+    <div class="pub-list reveal" style="transition-delay:.1s" id="pubList">
 
-      <!-- ══ JOURNALS ══════════════════════════════════════════════ -->
-
-      <div class="pub-card highlight-card" data-cat="journal" data-year="2026">
+      <!-- JOURNALS -->
+      <div class="pub-item show" data-cat="journal" data-year="2026" data-rank="1">
         <div class="pub-venue-row">
-          <span class="pub-venue venue-arxiv">arXiv Preprint</span>
-          <span class="pub-badge new-badge">2026 · New</span>
+          <span class="pub-venue venue-arxiv">arXiv</span>
+          <span class="pub-badge">2026</span>
         </div>
         <div class="pub-title">Quantum Interference-Induced Bhattacharyya Distance</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong></div>
-        <div class="pub-meta">arXiv:2601.05749, 2026</div>
-        <a class="pub-link" href="https://arxiv.org/abs/2601.05749" target="_blank">arxiv.org/abs/2601.05749 →</a>
+        <div class="pub-meta">arXiv:2601.05749 · 2026 <a class="pub-link" href="https://arxiv.org/abs/2601.05749" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card highlight-card" data-cat="journal" data-year="2025">
+      <div class="pub-item show" data-cat="journal" data-year="2025" data-rank="2">
         <div class="pub-venue-row">
           <span class="pub-venue venue-nature">Nature Sci Rep</span>
           <span class="pub-badge">Q1 · IF 3.9 · 2025</span>
-          <span class="badge-utility">Quantum Utility</span>
         </div>
         <div class="pub-title">Shallow Entangled Circuits for Quantum Time Series Prediction on IBM Devices</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Goel, R.</div>
-        <div class="pub-meta">Scientific Reports 15, 43727 (2025)</div>
-        <a class="pub-link" href="https://doi.org/10.1038/s41598-025-28512-6" target="_blank">doi.org/10.1038/s41598-025-28512-6 →</a>
+        <div class="pub-meta">Scientific Reports 15, 43727 (2025) <a class="pub-link" href="https://doi.org/10.1038/s41598-025-28512-6" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card highlight-card" data-cat="journal" data-year="2025">
+      <div class="pub-item show" data-cat="journal" data-year="2025" data-rank="3">
         <div class="pub-venue-row">
-          <span class="pub-venue venue-arxiv">arXiv Preprint</span>
+          <span class="pub-venue venue-arxiv">arXiv</span>
           <span class="pub-badge">2025</span>
-          <span class="badge-utility">Quantum Utility</span>
         </div>
         <div class="pub-title">Basis Adaptive Algorithm for Quantum Many-Body Systems on Quantum Computers</div>
         <div class="pub-authors">Biswas, A., Ghosh, S., Majumdar, R., <strong>Laskar, M. R.</strong>, Kumar, M.</div>
-        <div class="pub-meta">arXiv:2512.12753, 2025</div>
-        <a class="pub-link" href="https://arxiv.org/abs/2512.12753" target="_blank">arxiv.org/abs/2512.12753 →</a>
+        <div class="pub-meta">arXiv:2512.12753 · 2025 <a class="pub-link" href="https://arxiv.org/abs/2512.12753" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card highlight-card" data-cat="journal" data-year="2025">
+      <div class="pub-item" data-cat="journal" data-year="2025" data-rank="4">
         <div class="pub-venue-row">
-          <span class="pub-venue venue-arxiv">arXiv Preprint</span>
-          <span class="pub-badge">2025 · Cited 1</span>
-          <span class="badge-utility">Quantum Utility</span>
+          <span class="pub-venue venue-arxiv">arXiv</span>
+          <span class="pub-badge">2025</span>
         </div>
         <div class="pub-title">Physics-Informed Generative Machine Learning for Accelerated Quantum-centric Supercomputing</div>
         <div class="pub-authors">Patra, C., Mondal, D., Halder, S., Halder, D., <strong>Laskar, M. R.</strong>, Goel, R., Maitra, R.</div>
-        <div class="pub-meta">arXiv:2512.06858, 2025</div>
-        <a class="pub-link" href="https://arxiv.org/abs/2512.06858" target="_blank">arxiv.org/abs/2512.06858 →</a>
+        <div class="pub-meta">arXiv:2512.06858 · 2025 <a class="pub-link" href="https://arxiv.org/abs/2512.06858" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2025">
+      <div class="pub-item" data-cat="journal" data-year="2025" data-rank="5">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE TCCN</span>
-          <span class="pub-badge">Q1 · IF 6.35 · 2025 · In Press</span>
+          <span class="pub-badge">Q1 · IF 6.35 · In Press · 2025</span>
         </div>
         <div class="pub-title">QRadCom: Quantum-Assisted Source and Symbol Detection Framework in Radar Communication System</div>
         <div class="pub-authors">Naskar, S.*, <strong>Laskar, M. R.*</strong>, Dutta, A. K. &nbsp;(*Equal contribution)</div>
         <div class="pub-meta">IEEE Transactions on Cognitive Communications and Networking, 2025</div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2024">
+      <div class="pub-item" data-cat="journal" data-year="2024" data-rank="6">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE Comm Lett</span>
           <span class="pub-badge">Q1 · IF 4.4 · 2024</span>
@@ -615,51 +518,47 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <div class="pub-meta">IEEE Communications Letters, 28(11): 2663–2667, 2024</div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2024">
+      <div class="pub-item" data-cat="journal" data-year="2024" data-rank="7">
         <div class="pub-venue-row">
           <span class="pub-venue venue-nature">Nature Sci Rep</span>
           <span class="pub-badge">Q1 · IF 3.9 · 2024</span>
         </div>
         <div class="pub-title">Efficient Simulation of Potential Energy Operators on Quantum Hardware: A Study on Sodium Iodide (NaI)</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Bhattacharya, K., Atanu, Dasgupta, K.</div>
-        <div class="pub-meta">Nature Scientific Reports, 2024</div>
-        <a class="pub-link" href="https://www.nature.com/articles/s41598-024-60605-6" target="_blank">nature.com/articles/s41598-024-60605-6 →</a>
+        <div class="pub-meta">Nature Scientific Reports, 2024 <a class="pub-link" href="https://www.nature.com/articles/s41598-024-60605-6" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2024">
+      <div class="pub-item" data-cat="journal" data-year="2024" data-rank="8">
         <div class="pub-venue-row">
           <span class="pub-venue venue-nature">Nature Sci Rep</span>
-          <span class="pub-badge">Q1 · IF 3.9 · Apr 2024</span>
+          <span class="pub-badge">Q1 · IF 3.9 · 2024</span>
         </div>
         <div class="pub-title">A Complexity Efficient Penta-Diagonal Quantum Smoothing Filter for ECG Signal Denoising</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Pratiher, S., Dutta, A. K., Ghosh, N., Patra, A.</div>
-        <div class="pub-meta">Nature Scientific Reports, April 2024</div>
-        <a class="pub-link" href="https://doi.org/10.1038/s41598-024-59851-5" target="_blank">doi.org/10.1038/s41598-024-59851-5 →</a>
+        <div class="pub-meta">Nature Scientific Reports, April 2024 <a class="pub-link" href="https://doi.org/10.1038/s41598-024-59851-5" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2024">
+      <div class="pub-item" data-cat="journal" data-year="2024" data-rank="9">
         <div class="pub-venue-row">
-          <span class="pub-venue venue-arxiv">TechRxiv · Preprint</span>
+          <span class="pub-venue venue-arxiv">TechRxiv</span>
           <span class="pub-badge">Oct 2024</span>
         </div>
         <div class="pub-title">The Pursuit of Quantum Advantage with IBM Quantum Computers: A Perspective and Potential Research Problems</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Majumdar, R., Dasgupta, K., Dhinakaran, V., Subramaniam, V.</div>
-        <div class="pub-meta">TechRxiv, October 2024 · IBM Quantum, India</div>
-        <a class="pub-link" href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.173014358.86926254" target="_blank">techrxiv.org →</a>
+        <div class="pub-meta">TechRxiv, October 2024 <a class="pub-link" href="https://www.techrxiv.org/doi/full/10.36227/techrxiv.173014358.86926254" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2023">
+      <div class="pub-item" data-cat="journal" data-year="2023" data-rank="10">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE Trans CAS-I</span>
-          <span class="pub-badge">Q1 · IF 6.3 · Feb 2023</span>
+          <span class="pub-badge">Q1 · IF 6.3 · 2023</span>
         </div>
         <div class="pub-title">A Complexity-Efficient Quantum Architecture for Eigen Spectrum Estimation of Vandermonde System</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Dutta, A. K.</div>
-        <div class="pub-meta">IEEE Trans. Circuits Syst. I, Vol. 70, No. 5, pp. 2106–2119, 2023</div>
-        <a class="pub-link" href="https://ieeexplore.ieee.org/document/10056422" target="_blank">ieeexplore.ieee.org →</a>
+        <div class="pub-meta">IEEE Trans. Circuits Syst. I, 70(5): 2106–2119, 2023 <a class="pub-link" href="https://ieeexplore.ieee.org/document/10056422" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2023">
+      <div class="pub-item" data-cat="journal" data-year="2023" data-rank="11">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE Trans QE</span>
           <span class="pub-badge">Q1 · Oct 2023</span>
@@ -669,29 +568,27 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <div class="pub-meta">IEEE Transactions on Quantum Engineering, Oct. 2023</div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2023">
+      <div class="pub-item" data-cat="journal" data-year="2023" data-rank="12">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE Trans QE</span>
           <span class="pub-badge">Q1 · Apr 2023</span>
         </div>
         <div class="pub-title">Low Complexity Quantum Simulation Framework for Toeplitz-Structured Matrix</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Mondal, S., Dutta, A. K.</div>
-        <div class="pub-meta">IEEE Transactions on Quantum Engineering, Apr. 2023</div>
-        <a class="pub-link" href="https://ieeexplore.ieee.org/document/10113746" target="_blank">ieeexplore.ieee.org →</a>
+        <div class="pub-meta">IEEE Transactions on Quantum Engineering, Apr. 2023 <a class="pub-link" href="https://ieeexplore.ieee.org/document/10113746" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2022">
+      <div class="pub-item" data-cat="journal" data-year="2022" data-rank="13">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE TCOM</span>
-          <span class="pub-badge">Q1 · IF 8.3 · Apr 2022</span>
+          <span class="pub-badge">Q1 · IF 8.3 · 2022</span>
         </div>
         <div class="pub-title">Eigen-Spectrum Estimation and Source Detection in Massive Sensor Array</div>
         <div class="pub-authors"><strong>Laskar, M. R.</strong>, Mondal, S., Dutta, A. K.</div>
-        <div class="pub-meta">IEEE Transactions on Communications, Apr. 2022</div>
-        <a class="pub-link" href="https://ieeexplore.ieee.org/document/9756500" target="_blank">ieeexplore.ieee.org →</a>
+        <div class="pub-meta">IEEE Transactions on Communications, Apr. 2022 <a class="pub-link" href="https://ieeexplore.ieee.org/document/9756500" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="journal" data-year="2021">
+      <div class="pub-item" data-cat="journal" data-year="2021" data-rank="14">
         <div class="pub-venue-row">
           <span class="pub-venue venue-ieee">IEEE TVT</span>
           <span class="pub-badge">Q1 · IF 7.4 · 2021</span>
@@ -701,56 +598,51 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
         <div class="pub-meta">IEEE Transactions on Vehicular Technology, 70(2): 1688–1698, 2021</div>
       </div>
 
-      <!-- ══ CONFERENCE ═════════════════════════════════════════════ -->
-
-      <div class="pub-card" data-cat="conference" data-year="2023">
+      <!-- CONFERENCE -->
+      <div class="pub-item" data-cat="conference" data-year="2023">
         <div class="pub-venue-row">
           <span class="pub-venue venue-conf">IEEE VTC-Spring</span>
-          <span class="pub-badge">2023 · Florence, Italy</span>
+          <span class="pub-badge">Florence, Italy · 2023</span>
         </div>
         <div class="pub-title">Quantum Assisted Framework for Joint Detection and Estimation in Radar Communications</div>
         <div class="pub-authors"><strong>Laskar, M. R.*</strong>, Naskar, S.*, Dutta, A. K.</div>
-        <div class="pub-meta">IEEE 97th VTC-Spring 2023</div>
-        <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10200135/" target="_blank">ieeexplore.ieee.org →</a>
+        <div class="pub-meta">IEEE 97th VTC-Spring 2023 <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10200135/" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="conference" data-year="2023">
+      <div class="pub-item" data-cat="conference" data-year="2023">
         <div class="pub-venue-row">
           <span class="pub-venue venue-conf">IEEE VTC-Spring</span>
-          <span class="pub-badge">2023 · Florence, Italy</span>
+          <span class="pub-badge">Florence, Italy · 2023</span>
         </div>
         <div class="pub-title">A Proposed Quantum Classification Algorithm for Symbol Detection with Noisy Observation</div>
         <div class="pub-authors">Koya, S.*, <strong>Laskar, M. R.*</strong>, Dutta, A. K.</div>
-        <div class="pub-meta">IEEE 97th VTC-Spring 2023</div>
-        <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10200127" target="_blank">ieeexplore.ieee.org →</a>
+        <div class="pub-meta">IEEE 97th VTC-Spring 2023 <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10200127" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="conference" data-year="2020">
+      <div class="pub-item" data-cat="conference" data-year="2020">
         <div class="pub-venue-row">
           <span class="pub-venue venue-conf">IEEE WCNC</span>
-          <span class="pub-badge">2020 · Seoul · Airbus Support</span>
+          <span class="pub-badge">Seoul · 2020</span>
         </div>
         <div class="pub-title">TLS-Regularization Framework for Target Tracking under Perturbations</div>
         <div class="pub-authors"><strong>Laskar, M. R.*</strong>, Sen, D.</div>
-        <div class="pub-meta">IEEE WCNC 2020, Seoul, South Korea</div>
-        <a class="pub-link" href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=TLS-Regularization+Framework" target="_blank">ieeexplore.ieee.org →</a>
+        <div class="pub-meta">IEEE WCNC 2020, Seoul, South Korea <a class="pub-link" href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=TLS-Regularization+Framework" target="_blank">[link]</a></div>
       </div>
 
-      <div class="pub-card" data-cat="conference" data-year="2019">
+      <div class="pub-item" data-cat="conference" data-year="2019">
         <div class="pub-venue-row">
           <span class="pub-venue venue-conf">IEEE VTC-Spring</span>
-          <span class="pub-badge">2019 · Kuala Lumpur · Best Travel Award</span>
+          <span class="pub-badge">Kuala Lumpur · 2019</span>
         </div>
         <div class="pub-title">A Classification Framework for Correlated Sample Space in Cognitive Radar</div>
         <div class="pub-authors"><strong>Laskar, M. R.*</strong>, Sen, D.</div>
-        <div class="pub-meta">IEEE VTC-Spring 2019, Kuala Lumpur, Malaysia</div>
-        <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/8746500" target="_blank">ieeexplore.ieee.org →</a>
+        <div class="pub-meta">IEEE VTC-Spring 2019, Kuala Lumpur <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/8746500" target="_blank">[link]</a></div>
       </div>
 
     </div>
 
-    <div class="more-wrap reveal" id="pubMoreWrap" style="transition-delay:.2s">
-      <button class="btn-show" id="pubMoreBtn" onclick="togglePubMore()">Show All Publications</button>
+    <div class="show-more-wrap reveal" id="pubMoreWrap" style="transition-delay:.15s">
+      <button class="btn-text" id="pubMoreBtn" onclick="togglePubMore()">Show all journal papers</button>
     </div>
   </div>
 </section>
@@ -759,76 +651,54 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
 <section id="patents">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag">IP Portfolio</span>
-      <h2 class="section-title">Patents</h2>
-      <div class="divider"></div>
+      <div class="sec-label">IP Portfolio</div>
+      <h2 class="sec-title">Patents</h2>
     </div>
-    <div class="patents-list">
+    <ul class="simple-list">
 
-      <div class="patent-card reveal">
-        <div>
-          <span class="pat-status status-filed">Filed</span>
-          <span class="pat-num">IBM Research · US Patent App. No.: P202401710US01</span>
-          <div class="pat-title">System and Method for AI-Based Synthesis / Transpilation of General Quantum Circuits</div>
-          <div class="pat-meta">Madan, D., <strong>Laskar, M. R.</strong>, et al.</div>
-        </div>
-      </div>
+      <li class="simple-item reveal">
+        <span class="item-status status-filed">Filed</span>
+        <span class="item-title">System and Method for AI-Based Synthesis / Transpilation of General Quantum Circuits</span>
+        <div class="item-meta">Madan, D., <strong>Laskar, M. R.</strong>, et al. &nbsp;·&nbsp; IBM Research · US Patent App. P202401710US01</div>
+      </li>
 
-      <div class="patent-card reveal">
-        <div>
-          <span class="pat-status status-granted">Granted</span>
-          <span class="pat-num">IIT Kharagpur · Indian Patent No. 448500 · Appl. No. 202231072320</span>
-          <div class="pat-title">Quantum Circuit System For Realizing Vandermonde Matrix</div>
-          <div class="pat-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K.</div>
-        </div>
-      </div>
+      <li class="simple-item reveal">
+        <span class="item-status status-granted">Granted</span>
+        <span class="item-title">Quantum Circuit System For Realizing Vandermonde Matrix</span>
+        <div class="item-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K. &nbsp;·&nbsp; Indian Patent No. 448500 · IIT Kharagpur</div>
+      </li>
 
-      <div class="patent-card reveal">
-        <div>
-          <span class="pat-status status-granted">Granted</span>
-          <span class="pat-num">IIT Kharagpur · Indian Patent No. 513458 · Appl. No. 202231072327</span>
-          <div class="pat-title">Quantum Circuit System For Realizing Hankel Matrix Structure</div>
-          <div class="pat-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K.</div>
-        </div>
-      </div>
+      <li class="simple-item reveal">
+        <span class="item-status status-granted">Granted</span>
+        <span class="item-title">Quantum Circuit System For Realizing Hankel Matrix Structure</span>
+        <div class="item-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K. &nbsp;·&nbsp; Indian Patent No. 513458 · IIT Kharagpur</div>
+      </li>
 
-      <div class="patent-card reveal">
-        <div>
-          <span class="pat-status status-granted">Granted</span>
-          <span class="pat-num">IIT Kharagpur · Indian Patent No. 538179 · Appl. No. 202231049314</span>
-          <div class="pat-title">Composite Quantum Architecture For Quantum Realization of Jordan-Form Based Systems</div>
-          <div class="pat-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K.</div>
-        </div>
-      </div>
+      <li class="simple-item reveal">
+        <span class="item-status status-granted">Granted</span>
+        <span class="item-title">Composite Quantum Architecture For Quantum Realization of Jordan-Form Based Systems</span>
+        <div class="item-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K. &nbsp;·&nbsp; Indian Patent No. 538179 · IIT Kharagpur</div>
+      </li>
 
-      <div class="patent-card reveal">
-        <div>
-          <span class="pat-status status-filed">Filed</span>
-          <span class="pat-num">IIT Kharagpur · US Patent App. No. 18/097,221 · Jan. 2023</span>
-          <div class="pat-title">Composite Quantum Architecture For Jordan-Form Based Systems (US)</div>
-          <div class="pat-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K.</div>
-        </div>
-      </div>
+      <li class="simple-item reveal">
+        <span class="item-status status-filed">Filed</span>
+        <span class="item-title">Composite Quantum Architecture For Jordan-Form Based Systems (US)</span>
+        <div class="item-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K. &nbsp;·&nbsp; US Patent App. 18/097,221 · Jan. 2023</div>
+      </li>
 
-      <div class="patent-card reveal">
-        <div>
-          <span class="pat-status status-filed">Filed</span>
-          <span class="pat-num">IIT Kharagpur · Indian Patent Appl. No. 202331025559</span>
-          <div class="pat-title">Quantum System to Implement Graph Laplacian Operator for Spectrum Estimation</div>
-          <div class="pat-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K.</div>
-        </div>
-      </div>
+      <li class="simple-item reveal">
+        <span class="item-status status-filed">Filed</span>
+        <span class="item-title">Quantum System to Implement Graph Laplacian Operator for Spectrum Estimation</span>
+        <div class="item-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K. &nbsp;·&nbsp; Indian Patent Appl. 202331025559</div>
+      </li>
 
-      <div class="patent-card reveal">
-        <div>
-          <span class="pat-status status-filed">Filed</span>
-          <span class="pat-num">IIT Kharagpur · Indian Patent Appl. No. 202331015809</span>
-          <div class="pat-title">Elementary Quantum Gate-Based Quantum Filter System For Denoising Noisy Signals</div>
-          <div class="pat-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K.</div>
-        </div>
-      </div>
+      <li class="simple-item reveal">
+        <span class="item-status status-filed">Filed</span>
+        <span class="item-title">Elementary Quantum Gate-Based Quantum Filter System For Denoising Noisy Signals</span>
+        <div class="item-meta"><strong>Laskar, M. R.</strong>, Dutta, A. K. &nbsp;·&nbsp; Indian Patent Appl. 202331015809</div>
+      </li>
 
-    </div>
+    </ul>
   </div>
 </section>
 
@@ -836,474 +706,328 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
 <section id="talks">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag">Outreach</span>
-      <h2 class="section-title">Invited Talks &amp; Keynotes</h2>
-      <div class="divider"></div>
+      <div class="sec-label">Outreach</div>
+      <h2 class="sec-title">Invited Talks &amp; Keynotes</h2>
     </div>
 
-    <div class="talks-list reveal" style="transition-delay:.1s" id="talksList">
+    <div id="talksList">
 
-      <div class="talk-card show" data-rank="1">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Keynote · Upcoming</div>
-            <div class="talk-title">Quantum Algorithms on Near-Term Hardware: From Utility Towards Advantage</div>
-            <div class="talk-venue">NQCOMP-2026 · MIT Bangalore</div>
-          </div>
-          <div class="talk-date">Mar 2026</div>
+      <div class="talk-item show" data-rank="1">
+        <div class="talk-left">
+          <div class="talk-type">Keynote · Upcoming</div>
+          <div class="talk-title">Quantum Algorithms on Near-Term Hardware: From Utility Towards Advantage</div>
+          <div class="talk-venue">NQCOMP-2026 · MIT Bangalore</div>
         </div>
+        <div class="talk-date">Mar 2026</div>
       </div>
 
-      <div class="talk-card show" data-rank="2">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Keynote · TPC Chair</div>
-            <div class="talk-title">Road to Quantum Advantage</div>
-            <div class="talk-venue">SPARC-QC 2026 · NIT Rourkela</div>
-            <a class="talk-link" href="https://sites.google.com/view/sparc-qc-isqca-nit-rourkela/sparcqc2026" target="_blank">Event page →</a>
-          </div>
-          <div class="talk-date">Feb 2026</div>
+      <div class="talk-item show" data-rank="2">
+        <div class="talk-left">
+          <div class="talk-type">Keynote · TPC Chair</div>
+          <div class="talk-title">Road to Quantum Advantage</div>
+          <div class="talk-venue">SPARC-QC 2026 · NIT Rourkela &nbsp;<a class="talk-link" href="https://sites.google.com/view/sparc-qc-isqca-nit-rourkela/sparcqc2026" target="_blank">[event]</a></div>
         </div>
+        <div class="talk-date">Feb 2026</div>
       </div>
 
-      <div class="talk-card show" data-rank="3">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Talk</div>
-            <div class="talk-title">Quantum Technology for Medical Imaging and Diagnosis</div>
-            <div class="talk-venue">AROC 2025 — AIIMS-NCI Radiation Oncology Consortium · AIIMS Delhi</div>
-          </div>
-          <div class="talk-date">Dec 2025</div>
+      <div class="talk-item show" data-rank="3">
+        <div class="talk-left">
+          <div class="talk-type">Invited Talk</div>
+          <div class="talk-title">Quantum Technology for Medical Imaging and Diagnosis</div>
+          <div class="talk-venue">AROC 2025 — AIIMS Delhi</div>
         </div>
+        <div class="talk-date">Dec 2025</div>
       </div>
 
-      <div class="talk-card show" data-rank="4">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Keynote</div>
-            <div class="talk-title">Quantum Machine Learning and Applications</div>
-            <div class="talk-venue">Workshop on Quantum Technologies · IIT Ropar</div>
-            <a class="talk-link" href="https://skvipparthi.com/Qworkshop.html" target="_blank">Event page →</a>
-          </div>
-          <div class="talk-date">Dec 2025</div>
+      <div class="talk-item show" data-rank="4">
+        <div class="talk-left">
+          <div class="talk-type">Keynote</div>
+          <div class="talk-title">Quantum Machine Learning and Applications</div>
+          <div class="talk-venue">Workshop on Quantum Technologies · IIT Ropar &nbsp;<a class="talk-link" href="https://skvipparthi.com/Qworkshop.html" target="_blank">[event]</a></div>
         </div>
+        <div class="talk-date">Dec 2025</div>
       </div>
 
-      <div class="talk-card show" data-rank="5">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Keynote</div>
-            <div class="talk-title">Quantum Computing in Near Term and Beyond: Challenges and Opportunities</div>
-            <div class="talk-venue">Qiskit Fall Fest · IIT Guwahati (Online)</div>
-          </div>
-          <div class="talk-date">Oct 2025</div>
+      <div class="talk-item show" data-rank="5">
+        <div class="talk-left">
+          <div class="talk-type">Keynote</div>
+          <div class="talk-title">Quantum Computing in Near Term and Beyond: Challenges and Opportunities</div>
+          <div class="talk-venue">Qiskit Fall Fest · IIT Guwahati</div>
         </div>
+        <div class="talk-date">Oct 2025</div>
       </div>
 
-      <div class="talk-card show" data-rank="6">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Talk</div>
-            <div class="talk-title">Quantum Research Seminar</div>
-            <div class="talk-venue">Centre for Quantum Computing, RIKEN Wako Campus, Japan</div>
-            <a class="talk-link" href="https://rqc.riken.jp/en/events/20250929_233rd-rqc-seminar.html" target="_blank">Event details →</a>
-          </div>
-          <div class="talk-date">Sep 29, 2025</div>
+      <div class="talk-item show" data-rank="6">
+        <div class="talk-left">
+          <div class="talk-type">Invited Talk</div>
+          <div class="talk-title">Quantum Research Seminar</div>
+          <div class="talk-venue">RIKEN Wako Campus, Japan &nbsp;<a class="talk-link" href="https://rqc.riken.jp/en/events/20250929_233rd-rqc-seminar.html" target="_blank">[event]</a></div>
         </div>
+        <div class="talk-date">Sep 2025</div>
       </div>
 
-      <!-- hidden talks -->
-      <div class="talk-card" data-rank="7">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Guest Speaker</div>
-            <div class="talk-title">IEEE ISIT 2025 Quantum Hackathon</div>
-            <div class="talk-venue">IEEE Information Theory Society · Ann Arbor, Michigan, USA</div>
-          </div>
-          <div class="talk-date">Jun 2025</div>
+      <div class="talk-item" data-rank="7">
+        <div class="talk-left">
+          <div class="talk-type">Guest Speaker</div>
+          <div class="talk-title">IEEE ISIT 2025 Quantum Hackathon</div>
+          <div class="talk-venue">IEEE Information Theory Society · Ann Arbor, Michigan</div>
         </div>
+        <div class="talk-date">Jun 2025</div>
       </div>
 
-      <div class="talk-card" data-rank="8">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Distinguished Speaker</div>
-            <div class="talk-title">Indo-German Bilateral Workshop on Quantum Computing Technology</div>
-            <div class="talk-venue">SASTRA University, Trichy · Organised by HZDR &amp; IGSTC</div>
-            <a class="talk-link" href="https://timesofindia.indiatimes.com/city/trichy/sastra-conducts-indo-german-workshop/articleshow/121007841.cms" target="_blank">Press coverage →</a>
-          </div>
-          <div class="talk-date">May 2025</div>
+      <div class="talk-item" data-rank="8">
+        <div class="talk-left">
+          <div class="talk-type">Distinguished Speaker</div>
+          <div class="talk-title">Indo-German Bilateral Workshop on Quantum Computing Technology</div>
+          <div class="talk-venue">SASTRA University · HZDR &amp; IGSTC &nbsp;<a class="talk-link" href="https://timesofindia.indiatimes.com/city/trichy/sastra-conducts-indo-german-workshop/articleshow/121007841.cms" target="_blank">[press]</a></div>
         </div>
+        <div class="talk-date">May 2025</div>
       </div>
 
-      <div class="talk-card" data-rank="9">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Technical Sessions</div>
-            <div class="talk-title">Quantum Computing Foundations and Quantum Chemistry</div>
-            <div class="talk-venue">IIT Delhi, India</div>
-          </div>
-          <div class="talk-date">Apr 2025</div>
+      <div class="talk-item" data-rank="9">
+        <div class="talk-left">
+          <div class="talk-type">Technical Sessions</div>
+          <div class="talk-title">Quantum Computing Foundations and Quantum Chemistry</div>
+          <div class="talk-venue">IIT Delhi</div>
         </div>
+        <div class="talk-date">Apr 2025</div>
       </div>
 
-      <div class="talk-card" data-rank="10">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Talk</div>
-            <div class="talk-title">Quantum Technology Advances</div>
-            <div class="talk-venue">MNIT Jaipur · DST-AICTE-MNIT Program</div>
-          </div>
-          <div class="talk-date">Mar 2025</div>
+      <div class="talk-item" data-rank="10">
+        <div class="talk-left">
+          <div class="talk-type">Invited Talk</div>
+          <div class="talk-title">Quantum Technology Advances</div>
+          <div class="talk-venue">MNIT Jaipur · DST-AICTE Program</div>
         </div>
+        <div class="talk-date">Mar 2025</div>
       </div>
 
-      <div class="talk-card" data-rank="11">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Talk</div>
-            <div class="talk-title">Quantum Utility Experiments on Hardware</div>
-            <div class="talk-venue">Dept. of Chemistry, IIT Bombay, India</div>
-          </div>
-          <div class="talk-date">Feb 2025</div>
+      <div class="talk-item" data-rank="11">
+        <div class="talk-left">
+          <div class="talk-type">Invited Talk</div>
+          <div class="talk-title">Quantum Utility Experiments on Hardware</div>
+          <div class="talk-venue">Dept. of Chemistry, IIT Bombay</div>
         </div>
+        <div class="talk-date">Feb 2025</div>
       </div>
 
-      <div class="talk-card" data-rank="12">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Talk</div>
-            <div class="talk-title">Quantum Computing and Its Applications</div>
-            <div class="talk-venue">Presidency University, Bangalore, India</div>
-          </div>
-          <div class="talk-date">Jan 2025</div>
+      <div class="talk-item" data-rank="12">
+        <div class="talk-left">
+          <div class="talk-type">Invited Talk</div>
+          <div class="talk-title">Quantum Computing and Its Applications</div>
+          <div class="talk-venue">Presidency University, Bangalore</div>
         </div>
+        <div class="talk-date">Jan 2025</div>
       </div>
 
-      <div class="talk-card" data-rank="13">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Speaker</div>
-            <div class="talk-title">Quantum Computing Algorithms: From Utility Towards Advantage</div>
-            <div class="talk-venue">National Institute of Technology, Rourkela</div>
-          </div>
-          <div class="talk-date">Dec 2024</div>
+      <div class="talk-item" data-rank="13">
+        <div class="talk-left">
+          <div class="talk-type">Invited Speaker</div>
+          <div class="talk-title">Quantum Computing Algorithms: From Utility Towards Advantage</div>
+          <div class="talk-venue">NIT Rourkela</div>
         </div>
+        <div class="talk-date">Dec 2024</div>
       </div>
 
-      <div class="talk-card" data-rank="14">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Speaker &amp; Panelist</div>
-            <div class="talk-title">International Symposium on Quantum Computing and Innovations</div>
-            <div class="talk-venue">CDAC Kolkata, India</div>
-          </div>
-          <div class="talk-date">Dec 2024</div>
+      <div class="talk-item" data-rank="14">
+        <div class="talk-left">
+          <div class="talk-type">Speaker &amp; Panelist</div>
+          <div class="talk-title">International Symposium on Quantum Computing and Innovations</div>
+          <div class="talk-venue">CDAC Kolkata</div>
         </div>
+        <div class="talk-date">Dec 2024</div>
       </div>
 
-      <div class="talk-card" data-rank="15">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Demonstrator</div>
-            <div class="talk-title">Quantum Hardware Demonstration</div>
-            <div class="talk-venue">WTSA-24 — World Telecom Standardization Assembly, New Delhi</div>
-          </div>
-          <div class="talk-date">Oct 2024</div>
+      <div class="talk-item" data-rank="15">
+        <div class="talk-left">
+          <div class="talk-type">Invited Demonstrator</div>
+          <div class="talk-title">Quantum Hardware Demonstration</div>
+          <div class="talk-venue">WTSA-24 — World Telecom Standardization Assembly, New Delhi</div>
         </div>
+        <div class="talk-date">Oct 2024</div>
       </div>
 
-      <div class="talk-card" data-rank="16">
-        <div class="talk-row">
-          <div class="talk-left">
-            <div class="talk-type">Invited Talk</div>
-            <div class="talk-title">Quantum Computing for Biology and Chemistry</div>
-            <div class="talk-venue">IISER Pune &amp; CDAC Pune, India</div>
-          </div>
-          <div class="talk-date">Mar 2024</div>
+      <div class="talk-item" data-rank="16">
+        <div class="talk-left">
+          <div class="talk-type">Invited Talk</div>
+          <div class="talk-title">Quantum Computing for Biology and Chemistry</div>
+          <div class="talk-venue">IISER Pune &amp; CDAC Pune</div>
         </div>
+        <div class="talk-date">Mar 2024</div>
       </div>
 
     </div>
 
-    <div class="more-wrap reveal" style="margin-top:1.4rem;transition-delay:.2s">
-      <button class="btn-show" id="talkMoreBtn" onclick="toggleTalks()">Show All Talks</button>
+    <div class="show-more-wrap reveal" style="margin-top:.8rem">
+      <button class="btn-text" id="talkMoreBtn" onclick="toggleTalks()">Show all talks</button>
     </div>
   </div>
 </section>
 
-<!-- TEACHING & LECTURES -->
+<!-- TEACHING -->
 <section id="teaching">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag">Education</span>
-      <h2 class="section-title">Teaching &amp; Lectures</h2>
-      <div class="divider"></div>
+      <div class="sec-label">Education</div>
+      <h2 class="sec-title">Teaching &amp; Lectures</h2>
     </div>
 
-    <!-- Teaching Experience Grid -->
-    <div class="teaching-grid">
+    <ul class="simple-list reveal" style="transition-delay:.06s">
+      <li class="teach-item">
+        <div class="teach-head">
+          <span class="teach-title">AICTE-DST Quantum Technology Video Lecture Series</span>
+          <span class="teach-period">2025 – present</span>
+        </div>
+        <div class="teach-detail">MNIT Jaipur, IIT Kanpur, IIT Guwahati, IIT Roorkee &amp; others — faculty development programs across 10+ institutions</div>
+      </li>
+      <li class="teach-item">
+        <div class="teach-head">
+          <span class="teach-title">Visiting Faculty — Quantum Computing and Its Applications</span>
+          <span class="teach-period">Jan–May 2025</span>
+        </div>
+        <div class="teach-detail">S N Bose National Centre for Basic Sciences, Kolkata &nbsp;·&nbsp; Full semester course</div>
+      </li>
+      <li class="teach-item">
+        <div class="teach-head">
+          <span class="teach-title">PMRF External Teaching Assistantship</span>
+          <span class="teach-period">2022–2023</span>
+        </div>
+        <div class="teach-detail">Algorithm Design and Analysis (Winter) · Mathematics for Machine Learning (Spring)</div>
+      </li>
+      <li class="teach-item">
+        <div class="teach-head">
+          <span class="teach-title">Teaching Assistant — NPTEL</span>
+          <span class="teach-period">2021–2022</span>
+        </div>
+        <div class="teach-detail">Signal Processing for mm-Wave Communication for 5G and Beyond · MHRD, Govt. of India</div>
+      </li>
+      <li class="teach-item">
+        <div class="teach-head">
+          <span class="teach-title">Teaching Assistant</span>
+          <span class="teach-period">2019–2021</span>
+        </div>
+        <div class="teach-detail">Communication Hardware Laboratory · Introduction to Wireless Communications &nbsp;·&nbsp; G. S. Sanyal School, IIT Kharagpur</div>
+      </li>
+    </ul>
 
-      <div class="teach-card reveal">
-        <h4>AICTE-DST Quantum Technology Courses</h4>
-        <div class="teach-org">MNIT Jaipur, IIT Kanpur, IIT Guwahati, IIT Roorkee &amp; others — with IBM &amp; AICTE</div>
-        <div class="teach-period">2025 – Present</div>
-        <div class="teach-desc">Video lecture series across 10+ institutions for faculty development programs</div>
-      </div>
+    <!-- Lecture series -->
+    <div class="subsec reveal">
+      <div class="subsec-title">Video Lecture Series</div>
 
-      <div class="teach-card reveal" style="transition-delay:.07s">
-        <h4>Visiting Faculty</h4>
-        <div class="teach-org">S N Bose National Centre for Basic Sciences, Kolkata</div>
-        <div class="teach-period">Jan – May 2025</div>
-        <div class="teach-desc">Full semester course: Quantum Computing and Its Applications</div>
-      </div>
-
-      <div class="teach-card reveal">
-        <h4>PMRF Teaching Assistantship (External)</h4>
-        <div class="teach-org">Undergraduate Teaching Program</div>
-        <div class="teach-period">2022 – 2023</div>
-        <div class="teach-desc">Algorithm Design and Analysis (Winter) · Mathematics for Machine Learning (Spring)</div>
-      </div>
-
-      <div class="teach-card reveal" style="transition-delay:.07s">
-        <h4>Teaching Assistant — NPTEL</h4>
-        <div class="teach-org">NPTEL Online Program · Sponsored by MHRD, Govt. of India</div>
-        <div class="teach-period">2021 – 2022</div>
-        <div class="teach-desc">Signal Processing for mm-Wave Communication for 5G and Beyond</div>
-      </div>
-
-      <div class="teach-card reveal">
-        <h4>Teaching Assistant</h4>
-        <div class="teach-org">G. S. Sanyal School of Telecom., IIT Kharagpur</div>
-        <div class="teach-period">2019 – 2021</div>
-        <div class="teach-desc">Communication Hardware Laboratory · Introduction to Wireless Communications</div>
-      </div>
-
-      <div class="teach-card reveal" style="transition-delay:.07s">
-        <h4>Graduate Teaching Assistant</h4>
-        <div class="teach-org">Vinod Gupta School of Management, IIT Kharagpur</div>
-        <div class="teach-period">2020</div>
-        <div class="teach-desc">Post-Graduate Certificate Program in Business Analytics</div>
-      </div>
-
-    </div>
-
-    <!-- ══════════════════════════════
-         LECTURE SERIES
-    ══════════════════════════════ -->
-
-    <div class="lec-section-label reveal">Linear Algebra for Quantum Computing</div>
-    <div class="lec-grid">
-
-      <div class="lec-card reveal">
-        <div class="lec-tags">
+      <div style="margin-bottom:.5rem; font-size:.88rem; color:var(--ink-light); font-style:italic;">Linear Algebra for Quantum Computing — MNIT AICTE QT-03</div>
+      <div class="lec-grid">
+        <div class="lec-card">
           <span class="lec-tag tag-math">Math</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-03</span>
+          <div class="lec-num">Lecture 01</div>
+          <div class="lec-title">Vector Spaces for Quantum Computing</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=er9zW6QySyQ&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=24" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 01</div>
-        <div class="lec-title">Vector Spaces for Quantum Computing</div>
-        <div class="lec-venue">Foundations of vector spaces and their applications in quantum mechanics</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=er9zW6QySyQ&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=24" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal" style="transition-delay:.06s">
-        <div class="lec-tags">
+        <div class="lec-card">
           <span class="lec-tag tag-math">Math</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-03</span>
+          <div class="lec-num">Lecture 02</div>
+          <div class="lec-title">Unitary Matrices and Quantum Gates</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=ihG_JZmUwDU&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=23" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 02</div>
-        <div class="lec-title">Unitary Matrices and Quantum Gates</div>
-        <div class="lec-venue">Understanding unitary transformations and their role in quantum operations</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=ihG_JZmUwDU&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=23" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal" style="transition-delay:.12s">
-        <div class="lec-tags">
+        <div class="lec-card">
           <span class="lec-tag tag-math">Math</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-03</span>
+          <div class="lec-num">Lecture 03</div>
+          <div class="lec-title">Matrix Factorization Techniques</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=4_rQdqnfFjk&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=22" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 03</div>
-        <div class="lec-title">Matrix Factorization Techniques</div>
-        <div class="lec-venue">QR, LU, and spectral decomposition methods for quantum algorithms</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=4_rQdqnfFjk&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=22" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal">
-        <div class="lec-tags">
+        <div class="lec-card">
           <span class="lec-tag tag-math">Math</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-03</span>
+          <div class="lec-num">Lecture 04</div>
+          <div class="lec-title">Singular Value Decomposition (SVD)</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=ihG_JZmUwDU&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=23" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 04</div>
-        <div class="lec-title">Singular Value Decomposition (SVD)</div>
-        <div class="lec-venue">SVD fundamentals and applications in quantum state preparation</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=ihG_JZmUwDU&list=PLFxYlZrPtZWxfuRiXkb85tLyWEng5hmun&index=23" target="_blank">Watch on YouTube →</a>
       </div>
 
-    </div>
-
-    <div class="lec-section-label reveal">Quantum Computing Algorithms</div>
-    <div class="lec-grid">
-
-      <div class="lec-card reveal">
-        <div class="lec-tags">
-          <span class="lec-tag tag-computing">Algorithms</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-05</span>
+      <div style="margin:.9rem 0 .5rem; font-size:.88rem; color:var(--ink-light); font-style:italic;">Quantum Computing Algorithms — MNIT AICTE QT-05</div>
+      <div class="lec-grid">
+        <div class="lec-card">
+          <span class="lec-tag tag-alg">Algorithms</span>
+          <div class="lec-num">Lecture 01</div>
+          <div class="lec-title">Quantum Fourier Transform (QFT)</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=aqjEDaubjOY&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=8" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 01</div>
-        <div class="lec-title">Quantum Fourier Transform (QFT)</div>
-        <div class="lec-venue">Mathematical foundations and circuit implementation of QFT</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=aqjEDaubjOY&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=8" target="_blank">Watch on YouTube →</a>
+        <div class="lec-card">
+          <span class="lec-tag tag-alg">Algorithms</span>
+          <div class="lec-num">Lecture 02</div>
+          <div class="lec-title">Quantum Phase Estimation (QPE)</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=as63lVuCg08&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=7" target="_blank">Watch →</a>
+        </div>
+        <div class="lec-card">
+          <span class="lec-tag tag-alg">Algorithms</span>
+          <div class="lec-num">Lecture 03</div>
+          <div class="lec-title">Shor's Factorization Algorithm</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=FSIoP1MiriA&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=6" target="_blank">Watch →</a>
+        </div>
+        <div class="lec-card">
+          <span class="lec-tag tag-alg">Algorithms</span>
+          <div class="lec-num">Lecture 04</div>
+          <div class="lec-title">Shor's Algorithm: Advanced Implementation</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=QNuE-w2zjDg&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=5" target="_blank">Watch →</a>
+        </div>
       </div>
 
-      <div class="lec-card reveal" style="transition-delay:.06s">
-        <div class="lec-tags">
-          <span class="lec-tag tag-computing">Algorithms</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-05</span>
-        </div>
-        <div class="lec-course-num">Lecture 02</div>
-        <div class="lec-title">Quantum Phase Estimation (QPE)</div>
-        <div class="lec-venue">QPE algorithm and its applications in eigenvalue problems</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=as63lVuCg08&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=7" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal" style="transition-delay:.12s">
-        <div class="lec-tags">
-          <span class="lec-tag tag-computing">Algorithms</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-05</span>
-        </div>
-        <div class="lec-course-num">Lecture 03</div>
-        <div class="lec-title">Shor's Factorization Algorithm</div>
-        <div class="lec-venue">Quantum algorithm for integer factorization and cryptographic implications</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=FSIoP1MiriA&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=6" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal">
-        <div class="lec-tags">
-          <span class="lec-tag tag-computing">Algorithms</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-05</span>
-        </div>
-        <div class="lec-course-num">Lecture 04</div>
-        <div class="lec-title">Shor's Algorithm: Advanced Implementation</div>
-        <div class="lec-venue">Period finding, modular exponentiation, and practical considerations</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=QNuE-w2zjDg&list=PLFxYlZrPtZWyjwBiDJqQWaZAKvnytTYZ2&index=5" target="_blank">Watch on YouTube →</a>
-      </div>
-
-    </div>
-
-    <div class="lec-section-label reveal">Quantum Information &amp; Communications</div>
-    <div class="lec-grid">
-
-      <div class="lec-card reveal">
-        <div class="lec-tags">
+      <div style="margin:.9rem 0 .5rem; font-size:.88rem; color:var(--ink-light); font-style:italic;">Quantum Information &amp; Communications — MNIT AICTE QT-02/06</div>
+      <div class="lec-grid">
+        <div class="lec-card">
           <span class="lec-tag tag-comm">Comm</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-02</span>
+          <div class="lec-num">Lecture 01</div>
+          <div class="lec-title">Digital and Quantum Communication Fundamentals</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=hHqW453-ufw&list=PLFxYlZrPtZWzDFk-BOy8iXWS4qWqHV-sa&index=12" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 01</div>
-        <div class="lec-title">Digital and Quantum Communication Fundamentals</div>
-        <div class="lec-venue">Comparative analysis of classical and quantum communication systems</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=hHqW453-ufw&list=PLFxYlZrPtZWzDFk-BOy8iXWS4qWqHV-sa&index=12" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal" style="transition-delay:.06s">
-        <div class="lec-tags">
+        <div class="lec-card">
           <span class="lec-tag tag-comm">Comm</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-02</span>
+          <div class="lec-num">Lecture 02</div>
+          <div class="lec-title">Introduction to Quantum Channels</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=btoQxOogXKI&list=PLFxYlZrPtZWzDFk-BOy8iXWS4qWqHV-sa&index=11" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 02</div>
-        <div class="lec-title">Introduction to Quantum Channels</div>
-        <div class="lec-venue">Quantum channel models and information transmission capacity</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=btoQxOogXKI&list=PLFxYlZrPtZWzDFk-BOy8iXWS4qWqHV-sa&index=11" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal" style="transition-delay:.12s">
-        <div class="lec-tags">
+        <div class="lec-card">
           <span class="lec-tag tag-info">Information</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-06</span>
+          <div class="lec-num">Lecture 03</div>
+          <div class="lec-title">Shannon Theory in Quantum Information — Part I</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=Yr0jXx2WN28&list=PLFxYlZrPtZWzryuymV5wB2hSE0CFi2kGp&index=27" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 03</div>
-        <div class="lec-title">Shannon Theory in Quantum Information — Part I</div>
-        <div class="lec-venue">Quantum entropy, von Neumann entropy, and information measures</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=Yr0jXx2WN28&list=PLFxYlZrPtZWzryuymV5wB2hSE0CFi2kGp&index=27" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal">
-        <div class="lec-tags">
+        <div class="lec-card">
           <span class="lec-tag tag-info">Information</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-06</span>
+          <div class="lec-num">Lecture 04</div>
+          <div class="lec-title">Density Matrices and Quantum Channels</div>
+          <a class="lec-link" href="https://www.youtube.com/watch?v=1O2TTDMxmV8&list=PLFxYlZrPtZWzryuymV5wB2hSE0CFi2kGp&index=25" target="_blank">Watch →</a>
         </div>
-        <div class="lec-course-num">Lecture 04</div>
-        <div class="lec-title">Shannon Theory in Quantum Information — Part II</div>
-        <div class="lec-venue">Quantum data compression and accessible information theorems</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=eHCLUjgy1qQ&list=PLFxYlZrPtZWzryuymV5wB2hSE0CFi2kGp&index=26" target="_blank">Watch on YouTube →</a>
       </div>
 
-      <div class="lec-card reveal" style="transition-delay:.06s">
-        <div class="lec-tags">
-          <span class="lec-tag tag-info">Information</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-06</span>
+      <div style="margin:.9rem 0 .5rem; font-size:.88rem; color:var(--ink-light); font-style:italic;">Class Notes</div>
+      <div class="lec-grid">
+        <div class="lec-card">
+          <span class="lec-tag tag-math">PDF · UG</span>
+          <div class="lec-title">Linear Algebra for Quantum Computing for Beginners</div>
+          <a class="lec-link" href="https://drive.google.com/file/d/1euhz3hSdDnwBTZ4PLkz0Fv78q7LeR3Rn/view" target="_blank">Download →</a>
         </div>
-        <div class="lec-course-num">Lecture 05</div>
-        <div class="lec-title">Density Matrices and Quantum Channels</div>
-        <div class="lec-venue">Mixed states, density operator formalism, and channel representations</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=1O2TTDMxmV8&list=PLFxYlZrPtZWzryuymV5wB2hSE0CFi2kGp&index=25" target="_blank">Watch on YouTube →</a>
-      </div>
-
-      <div class="lec-card reveal" style="transition-delay:.12s">
-        <div class="lec-tags">
-          <span class="lec-tag tag-info">Information</span>
-          <span class="lec-tag tag-computing">MNIT AICTE QT-06</span>
+        <div class="lec-card">
+          <span class="lec-tag tag-math">PDF · PG</span>
+          <div class="lec-title">Basis and Factorisation Techniques for Quantum Computing</div>
+          <a class="lec-link" href="https://drive.google.com/file/d/1ZCisD_Vef-iZswoNsDNV49CspimmsWey/view" target="_blank">Download →</a>
         </div>
-        <div class="lec-course-num">Lecture 06</div>
-        <div class="lec-title">Noisy Quantum Channels and No-Cloning Theorem</div>
-        <div class="lec-venue">Quantum noise models, decoherence, and fundamental impossibility results</div>
-        <a class="lec-link" href="https://www.youtube.com/watch?v=YGyzLNGSMTA&list=PLFxYlZrPtZWzryuymV5wB2hSE0CFi2kGp&index=24" target="_blank">Watch on YouTube →</a>
-      </div>
-
-    </div>
-
-    <!-- Class Notes -->
-    <div class="lec-section-label reveal">Class Notes</div>
-    <div class="lec-grid">
-
-      <div class="lec-card reveal">
-        <div class="lec-tags">
-          <span class="lec-tag tag-math">PDF</span>
-          <span class="lec-tag tag-math">UG Level</span>
+        <div class="lec-card">
+          <span class="lec-tag tag-math">PDF · UG</span>
+          <div class="lec-title">Probability and Quantum Computing Class Notes</div>
+          <a class="lec-link" href="https://drive.google.com/file/d/1FckYa7UzC1nGq9x0SDzLTwAAJYkZ9O7C/view" target="_blank">Download →</a>
         </div>
-        <div class="lec-title">Linear Algebra for Quantum Computing for Beginners</div>
-        <div class="lec-venue">UG level tutorial</div>
-        <a class="lec-link" href="https://drive.google.com/file/d/1euhz3hSdDnwBTZ4PLkz0Fv78q7LeR3Rn/view" target="_blank">Download PDF →</a>
       </div>
-
-      <div class="lec-card reveal" style="transition-delay:.06s">
-        <div class="lec-tags">
-          <span class="lec-tag tag-math">PDF</span>
-          <span class="lec-tag tag-math">PG Level</span>
-        </div>
-        <div class="lec-title">Basis and Factorisation Techniques for Quantum Computing</div>
-        <div class="lec-venue">PG level tutorial</div>
-        <a class="lec-link" href="https://drive.google.com/file/d/1ZCisD_Vef-iZswoNsDNV49CspimmsWey/view" target="_blank">Download PDF →</a>
-      </div>
-
-      <div class="lec-card reveal" style="transition-delay:.12s">
-        <div class="lec-tags">
-          <span class="lec-tag tag-math">PDF</span>
-          <span class="lec-tag tag-math">UG Standard</span>
-        </div>
-        <div class="lec-title">Probability and Quantum Computing Class Notes</div>
-        <div class="lec-venue">UG standard</div>
-        <a class="lec-link" href="https://drive.google.com/file/d/1FckYa7UzC1nGq9x0SDzLTwAAJYkZ9O7C/view" target="_blank">Download PDF →</a>
-      </div>
-
     </div>
 
     <!-- Book -->
-    <div class="book-card reveal" style="margin-top:2.5rem">
-      <h4>Quantum Computing: An Introductory Book</h4>
-      <p>A handbook written for all beginners to quantum computing — co-authored by Mostafizur Rahaman to make quantum concepts accessible to students and practitioners across disciplines.</p>
-      <a class="book-link" href="https://www.amazon.in/gp/product/B0G6D2HT3G/ref=ox_sc_act_title_1?smid=A1CYTLOJQWW85X&psc=1" target="_blank">View on Amazon →</a>
-      &nbsp;&nbsp;
-      <a class="book-link" href="https://drive.google.com/file/d/10PoERiUmUSmo5BAbV-c099Y1nAnbrB7L/view?usp=sharing" target="_blank">Table of Contents →</a>
+    <div class="book-row reveal">
+      <div>
+        <div class="book-title">Quantum Computing: An Introductory Book</div>
+        <div class="book-desc">An introductory handbook for students and practitioners. Co-authored by Mostafizur Rahaman.</div>
+      </div>
+      <div style="display:flex; gap:.8rem; flex-wrap:wrap; align-items:center;">
+        <a class="book-link" href="https://www.amazon.in/gp/product/B0G6D2HT3G/ref=ox_sc_act_title_1?smid=A1CYTLOJQWW85X&psc=1" target="_blank">Amazon →</a>
+        <a class="book-link" href="https://drive.google.com/file/d/10PoERiUmUSmo5BAbV-c099Y1nAnbrB7L/view?usp=sharing" target="_blank">Table of Contents →</a>
+      </div>
     </div>
 
   </div>
@@ -1313,66 +1037,47 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
 <section id="awards">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag" style="background:rgba(255,255,255,.08);color:var(--rose)">Recognition</span>
-      <h2 class="section-title">Awards &amp; Honors</h2>
-      <div class="divider"></div>
+      <div class="sec-label">Recognition</div>
+      <h2 class="sec-title">Awards &amp; Honors</h2>
     </div>
-    <div class="awards-grid">
 
-      <div class="award-card reveal">
+    <div class="simple-list">
+      <div class="award-item reveal">
         <div class="award-year">2024 · IBM Research</div>
-        <div class="award-title">Distinguished Research Paper Award</div>
-        <div class="award-org">Awarded across all IBM Research India divisions for quantum chemistry paper in Nature Scientific Reports, proposing the novel quantum polynomial encoding algorithm.</div>
+        <div><div class="award-title">Distinguished Research Paper Award</div><div class="award-org">Quantum chemistry paper, Nature Scientific Reports (across all IBM Research India divisions)</div></div>
       </div>
-
-      <div class="award-card reveal" style="transition-delay:.07s">
+      <div class="award-item reveal">
         <div class="award-year">2021 · Govt. of India</div>
-        <div class="award-title">Prime Minister's Research Fellowship (PMRF)</div>
-        <div class="award-org">Prestigious fellowship awarded to top PhD scholars in India for excellence in research. May 2021 cycle.</div>
+        <div><div class="award-title">Prime Minister's Research Fellowship (PMRF)</div><div class="award-org">May 2021 cycle</div></div>
       </div>
-
-      <div class="award-card reveal" style="transition-delay:.14s">
-        <div class="award-year">2021 – Present · IBM Quantum</div>
-        <div class="award-title">IBM Quantum Researcher Program — Member</div>
-        <div class="award-org">Extended hardware access for simulating quantum algorithms on real quantum machines.</div>
+      <div class="award-item reveal">
+        <div class="award-year">2021– · IBM Quantum</div>
+        <div><div class="award-title">IBM Quantum Researcher Program — Member</div><div class="award-org">Extended hardware access for research</div></div>
       </div>
-
-      <div class="award-card reveal">
-        <div class="award-year">2022 &amp; 2023 · PMRF / MoE</div>
-        <div class="award-title">National Recognition for Commendable Research</div>
-        <div class="award-org">Commendation from NCC, Prime Minister's Research Fellowship, Ministry of Education — Electronics &amp; ECE Discipline.</div>
+      <div class="award-item reveal">
+        <div class="award-year">2022, 2023 · MoE</div>
+        <div><div class="award-title">National Recognition for Commendable Research</div><div class="award-org">PMRF / Ministry of Education — Electronics &amp; ECE discipline</div></div>
       </div>
-
-      <div class="award-card reveal" style="transition-delay:.07s">
-        <div class="award-year">2021 &amp; 2022 · Qualcomm</div>
-        <div class="award-title">Qualcomm Innovation Fellowship — Finalist</div>
-        <div class="award-org">Finalist in two consecutive years for research on quantum algorithms for massive MIMO and quantum spectrum estimation.</div>
+      <div class="award-item reveal">
+        <div class="award-year">2021, 2022 · Qualcomm</div>
+        <div><div class="award-title">Qualcomm Innovation Fellowship — Finalist</div><div class="award-org">Two consecutive years; quantum algorithms for massive MIMO and spectrum estimation</div></div>
       </div>
-
-      <div class="award-card reveal" style="transition-delay:.14s">
+      <div class="award-item reveal">
         <div class="award-year">2026 · NIT Rourkela</div>
-        <div class="award-title">TPC Chair — SPARCQC 2026</div>
-        <div class="award-org">Technical Program Committee Chair, SPARC International Symposium on Quantum Computing and Applications.</div>
+        <div><div class="award-title">TPC Chair — SPARC-QC 2026</div><div class="award-org">SPARC International Symposium on Quantum Computing and Applications</div></div>
       </div>
-
-      <div class="award-card reveal">
+      <div class="award-item reveal">
         <div class="award-year">2023 · IEEE</div>
-        <div class="award-title">TPC Chair — IEEE VTC-Spring 2023</div>
-        <div class="award-org">Technical Program Committee Chair, IEEE 97th Vehicular Technology Conference, Florence, Italy.</div>
+        <div><div class="award-title">TPC Chair — IEEE VTC-Spring 2023</div><div class="award-org">Florence, Italy</div></div>
       </div>
-
-      <div class="award-card reveal" style="transition-delay:.07s">
-        <div class="award-year">2019 · IIT Kharagpur</div>
-        <div class="award-title">Best International Conference Travel Grant</div>
-        <div class="award-org">Institutional best travel award for presenting at IEEE VTC-Spring 2019, Kuala Lumpur, Malaysia.</div>
+      <div class="award-item reveal">
+        <div class="award-year">2019 · IIT KGP</div>
+        <div><div class="award-title">Best International Conference Travel Grant</div><div class="award-org">IEEE VTC-Spring 2019, Kuala Lumpur</div></div>
       </div>
-
-      <div class="award-card reveal" style="transition-delay:.14s">
-        <div class="award-year">2012 – 2016</div>
-        <div class="award-title">Full Tuition Merit Scholarship</div>
-        <div class="award-org">Fully funded undergraduate scholarship awarded to top 5% of students based on first-year performance.</div>
+      <div class="award-item reveal">
+        <div class="award-year">2012–2016</div>
+        <div><div class="award-title">Full Tuition Merit Scholarship</div><div class="award-org">Undergraduate — top 5% first-year performance</div></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -1381,33 +1086,22 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
 <section id="press">
   <div class="container">
     <div class="reveal">
-      <span class="section-tag">Media</span>
-      <h2 class="section-title">Press</h2>
-      <div class="divider"></div>
+      <div class="sec-label">Media</div>
+      <h2 class="sec-title">Press</h2>
     </div>
-    <div class="press-list">
-
+    <div>
       <a href="https://timesofindia.indiatimes.com/technology/times-techies/ibm-is-at-the-forefront-of-quantum-computing-tech/articleshow/111619851.cms" target="_blank" class="press-item reveal">
-        <div>
-          <div class="press-source">Times of India</div>
-          <div class="press-title">IBM is at the Forefront of Quantum Computing Tech</div>
-        </div>
+        <div class="press-source">Times of India</div>
+        <div class="press-title">IBM is at the Forefront of Quantum Computing Tech</div>
       </a>
-
       <a href="https://2025.ieee-isit.org/quantum-hackathon" target="_blank" class="press-item reveal">
-        <div>
-          <div class="press-source">IEEE Information Theory Society</div>
-          <div class="press-title">IEEE ISIT 2025 Quantum Hackathon — Where Quantum Computing Meets Information Theory</div>
-        </div>
+        <div class="press-source">IEEE Information Theory</div>
+        <div class="press-title">IEEE ISIT 2025 Quantum Hackathon — Where Quantum Computing Meets Information Theory</div>
       </a>
-
       <a href="https://timesofindia.indiatimes.com/city/trichy/sastra-conducts-indo-german-workshop/articleshow/121007841.cms" target="_blank" class="press-item reveal">
-        <div>
-          <div class="press-source">Times of India</div>
-          <div class="press-title">SASTRA Conducts Indo-German Workshop on Quantum Technologies</div>
-        </div>
+        <div class="press-source">Times of India</div>
+        <div class="press-title">SASTRA Conducts Indo-German Workshop on Quantum Technologies</div>
       </a>
-
     </div>
   </div>
 </section>
@@ -1415,88 +1109,103 @@ footer{background:var(--dark-800);padding:3rem 2rem;text-align:center;border-top
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Mostafizur Rahaman</div>
-  <div class="footer-role">Research Scientist · Quantum Division, IBM Research</div>
+  <div class="footer-sub">Research Scientist · Quantum Division, IBM Research</div>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/mostafizur-rahaman-phd-0698b3a6/" target="_blank">LinkedIn</a>
     <a href="https://scholar.google.com/citations?user=_ZZbn1MAAAAJ&hl=en" target="_blank">Google Scholar</a>
     <a href="https://sites.google.com/view/rahaman93/home" target="_blank">Google Sites</a>
+    <a href="mailto:rahaman1@ibm.com">Email</a>
   </div>
   <div class="footer-copy">© 2025 Mostafizur Rahaman</div>
 </footer>
 
 <script>
 // Scroll reveal
-const obs = new IntersectionObserver(e=>{
-  e.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
-},{threshold:.07});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: .07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // Hamburger
-function toggleMenu(){
+function toggleMenu() {
   document.getElementById('navLinks').classList.toggle('open');
 }
-document.querySelectorAll('.nav-links a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
 });
 
-// Publications — tab filter (Journal / Conference only)
+// Publications — tab filter + show/hide
+const INITIAL_SHOW_JOURNALS = 3;
+let pubsExpanded = false;
 let currentCat = 'journal';
 
-function sortCards(cards){
-  return Array.from(cards).sort((a,b)=>{
-    const ya = parseInt(a.dataset.year||'0');
-    const yb = parseInt(b.dataset.year||'0');
-    return yb - ya;
-  });
-}
-
-function filterPubs(cat, btn){
+function filterPubs(cat, btn) {
   currentCat = cat;
-  document.querySelectorAll('.pub-tab').forEach(t=>t.classList.remove('active'));
+  pubsExpanded = false;
+  document.querySelectorAll('.pub-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
 
-  const list = document.getElementById('pubList');
-  const allCards = list.querySelectorAll('.pub-card');
+  const allItems = document.querySelectorAll('#pubList .pub-item');
+  let shown = 0;
+  allItems.forEach(item => {
+    const cats = (item.dataset.cat || '').split(' ');
+    if(cats.includes(cat)) {
+      const rank = parseInt(item.dataset.rank || '99');
+      const show = cat === 'journal' ? rank <= INITIAL_SHOW_JOURNALS : true;
+      item.classList.toggle('show', show);
+      if(show) shown++;
+    } else {
+      item.classList.remove('show');
+    }
+  });
 
-  // Show matching cards; for journals put highlights first
-  allCards.forEach(c=>c.classList.remove('show'));
-  const matching = Array.from(allCards).filter(c=>(c.dataset.cat||'').split(' ').includes(cat));
-
-  if(cat === 'journal'){
-    const highlighted = matching.filter(c=>c.classList.contains('highlight-card'));
-    const rest = sortCards(matching.filter(c=>!c.classList.contains('highlight-card')));
-    [...highlighted, ...rest].forEach(c=>{ c.classList.add('show'); list.appendChild(c); });
-  } else {
-    sortCards(matching).forEach(c=>{ c.classList.add('show'); list.appendChild(c); });
-  }
-
-  document.getElementById('pubMoreWrap').style.display = 'none';
+  const wrap = document.getElementById('pubMoreWrap');
+  const total = Array.from(allItems).filter(i => (i.dataset.cat||'').split(' ').includes(cat)).length;
+  wrap.style.display = (cat === 'journal' && total > INITIAL_SHOW_JOURNALS) ? 'block' : 'none';
+  document.getElementById('pubMoreBtn').textContent = `Show all journal papers (${total} total)`;
 }
 
-// Initialise on load — default to Journal tab
-document.addEventListener('DOMContentLoaded', ()=>{
-  filterPubs('journal', document.querySelector('.pub-tab'));
-});
+function togglePubMore() {
+  pubsExpanded = !pubsExpanded;
+  const allItems = document.querySelectorAll('#pubList .pub-item');
+  allItems.forEach(item => {
+    const cats = (item.dataset.cat || '').split(' ');
+    if(cats.includes(currentCat)) {
+      if(pubsExpanded) {
+        item.classList.add('show');
+      } else {
+        const rank = parseInt(item.dataset.rank || '99');
+        item.classList.toggle('show', rank <= INITIAL_SHOW_JOURNALS);
+      }
+    }
+  });
+  document.getElementById('pubMoreBtn').textContent = pubsExpanded ? 'Show fewer' : `Show all journal papers`;
+}
 
 // Talks toggle
 let talksExpanded = false;
-function toggleTalks(){
+function toggleTalks() {
   talksExpanded = !talksExpanded;
-  document.querySelectorAll('.talk-card').forEach(c=>{
+  document.querySelectorAll('.talk-item').forEach(c => {
     const rank = parseInt(c.dataset.rank);
-    c.classList.toggle('show', talksExpanded || rank<=6);
+    c.classList.toggle('show', talksExpanded || rank <= 6);
   });
-  document.getElementById('talkMoreBtn').textContent = talksExpanded ? 'Show Fewer' : 'Show All Talks';
+  document.getElementById('talkMoreBtn').textContent = talksExpanded ? 'Show fewer' : 'Show all talks';
 }
 
-// Nav active
+// Nav active highlight
 const secs = document.querySelectorAll('section[id]');
-window.addEventListener('scroll',()=>{
-  let cur='';
-  secs.forEach(s=>{ if(window.scrollY>=s.offsetTop-90) cur=s.id; });
-  document.querySelectorAll('.nav-links a').forEach(a=>{
-    a.style.color = a.getAttribute('href')==='#'+cur ? 'var(--rose)' : '';
+window.addEventListener('scroll', () => {
+  let cur = '';
+  secs.forEach(s => { if(window.scrollY >= s.offsetTop - 80) cur = s.id; });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent)' : '';
   });
+});
+
+// Init
+document.addEventListener('DOMContentLoaded', () => {
+  filterPubs('journal', document.querySelector('.pub-tab'));
 });
 </script>
 </body>
