@@ -195,6 +195,59 @@ a{color:inherit}
 .interests{max-width:720px;border-top:2px solid var(--ink)}
 .interests li{padding:.8rem 0;border-bottom:1px solid var(--line);font-weight:550}
 
+
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin-top:1.2rem;
+  padding-left:2.2rem;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:.42rem;
+  top:.4rem;
+  bottom:.45rem;
+  width:2px;
+  background:linear-gradient(to bottom,var(--powder),var(--lavender));
+}
+.milestone{
+  position:relative;
+  padding:0 0 1.8rem 1.15rem;
+}
+.milestone:last-child{padding-bottom:0}
+.milestone::before{
+  content:"";
+  position:absolute;
+  left:-2.18rem;
+  top:.38rem;
+  width:.75rem;
+  height:.75rem;
+  border-radius:50%;
+  background:#fff;
+  border:3px solid var(--purple);
+  box-shadow:0 0 0 4px rgba(218,177,218,.18);
+}
+.milestone .time{
+  color:var(--purple);
+  font-weight:800;
+  font-size:.93rem;
+  letter-spacing:.01em;
+  margin-bottom:.2rem;
+}
+.milestone h3{
+  font-size:1.22rem;
+  line-height:1.25;
+  letter-spacing:-.02em;
+  margin-bottom:.18rem;
+}
+.milestone p{
+  color:var(--muted);
+  font-size:.98rem;
+  line-height:1.5;
+  max-width:58rem;
+}
+
 .foot{
   background:#171318;color:#d8d2da;padding:24px 0;font-size:.9rem
 }
@@ -214,14 +267,14 @@ a{color:inherit}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style></head><body>
 <header class="profile"><div class="wrap">
-<div class="topbar"><a class="mark" href="index.html"><strong>Mostafizur Rahaman, PhD</strong><span>Quantum Signal &amp; Information Processing</span></a>
+<div class="topbar"><a class="mark" href="index.html"><strong>Mostafizur Rahaman</strong><span>Quantum Signal &amp; Information Processing</span></a>
 <nav class="toplinks"><a href="https://scholar.google.com/citations?user=_ZZbn1MAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://github.com/rahaman-quantum" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/mostafizur-rahaman-phd-0698b3a6/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:morl@kth.se">Email</a></nav></div>
 <div class="id"><div class="photo">
 <img src="https://www.kth.se/files/avatar/morl"
  onerror="if(this.dataset.step==='1'){this.src='https://raw.githubusercontent.com/rahaman-quantum/rahaman1/main/IMG_5310.JPG';this.dataset.step='2';}else if(this.dataset.step==='2'){this.src='https://github.com/rahaman-quantum/rahaman1/blob/main/IMG_5310.JPG?raw=1';this.dataset.step='3';}else{this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:grid;place-items:center;height:100%;font-size:5rem;font-weight:800;color:#4facef&quot;>MR</div>';}"
  data-step="1"
  alt="Portrait of Mostafizur Rahaman"/>
-</div><div><h1 class="name">Dr.Mostafizur Rahaman</h1><ul class="aff"><li>Researcher, KTH Royal Institute of Technology, Sweden</li><li>Research Scientist, IBM Quantum — on sabbatical</li><li>Visiting Scientist, RIKEN Center for Quantum Computing, Japan</li></ul></div></div>
+</div><div><h1 class="name">Mostafizur Rahaman</h1><ul class="aff"><li>Researcher, KTH Royal Institute of Technology, Sweden</li><li>Research Scientist, IBM Quantum — on sabbatical</li><li>Visiting Scientist, RIKEN Center for Quantum Computing, Japan</li></ul></div></div>
 </div></header>
 <nav class="mainnav"><div class="wrap navin"><a href="index.html" class="active">Research</a><a href="about.html" class="">About</a><a href="journals.html" class="">Journals</a><a href="conferences.html" class="">Conferences</a><a href="patents.html" class="">Patents</a></div></nav>
 <main class="page"><div class="wrap">
@@ -248,10 +301,42 @@ a{color:inherit}
 </div></section>
 
 
-<section class="sec"><h2 class="sec-title">Research trajectory</h2>
-<div class="prose">
-<p>My research began with <strong>structured Hamiltonian simulation and spectral estimation</strong>, where I studied how algebraic structure can reduce the cost of quantum circuits. At IBM Quantum, this expanded toward <strong>hardware-aware algorithms, functional approximation, and quantum-centric computation</strong> on real superconducting devices. My current work at KTH and with RIKEN increasingly connects these ideas to <strong>quantum information, learning, weak measurement, and open-system dynamics</strong>.</p>
-</div></section>
+<section class="sec">
+  <h2 class="sec-title">Research trajectory</h2>
+  <div class="timeline" aria-label="Research and education milestones">
+
+    <div class="milestone">
+      <p class="time">Jan. 2018 – Sept. 2020</p>
+      <h3>M.S. (Research), IIT Kharagpur</h3>
+      <p>Synopsis submitted in Feb. 2020; defended in Sept. 2020. Research in statistical signal processing, estimation, and learning.</p>
+    </div>
+
+    <div class="milestone">
+      <p class="time">Sept. 2020 – Feb. 2025</p>
+      <h3>Ph.D., IIT Kharagpur · Prime Minister's Research Fellow</h3>
+      <p>Synopsis submitted in Oct. 2023; defended in Feb. 2025. Quantum algorithms and architectures for structured Hamiltonian operators with efficient gate complexity.</p>
+    </div>
+
+    <div class="milestone">
+      <p class="time">Jan. 2024 – Jul. 2026 · currently on sabbatical</p>
+      <h3>Research Scientist, IBM Quantum Division</h3>
+      <p>Hardware-aware quantum algorithms, functional approximation, circuit compilation, quantum-centric computation, and experiments on superconducting quantum processors.</p>
+    </div>
+
+    <div class="milestone">
+      <p class="time">Sept. 2025 – Present</p>
+      <h3>Visiting Scientist, RIKEN Center for Quantum Computing</h3>
+      <p>Quantum information physics, quantum reservoir computing, weak measurement, and open quantum dynamics.</p>
+    </div>
+
+    <div class="milestone">
+      <p class="time">Aug. 2026 – Present</p>
+      <h3>Researcher (Senior Postdoc), KTH Royal Institute of Technology</h3>
+      <p>Quantum information processing, learning theory, and quantum algorithms at the School of Electrical Engineering and Computer Science.</p>
+    </div>
+
+  </div>
+</section>
 
 <section class="sec"><h2 class="sec-title">Selected publications</h2><ol class="pubs">
 <li class="pub"><p class="label">Scientific Reports</p><h3 class="pub-title">Shallow Entangled Circuits for Quantum Time Series Prediction on IBM Devices</h3><p class="pub-links"><a class="link" href="https://www.nature.com/articles/s41598-025-28512-6" target="_blank">Paper</a></p></li>
@@ -264,8 +349,8 @@ a{color:inherit}
 <section class="sec"><h2 class="sec-title">Current collaborators</h2><ul class="rows">
 <li class="row"><span class="k">Prof. Mikael Skoglund</span><div><b>KTH Royal Institute of Technology</b><span class="sub">Quantum information processing and quantum learning.</span></div></li>
 <li class="row"><span class="k">Prof. Gabor Fodor</span><div><b>KTH Royal Institute of Technology / Ericsson Research</b><span class="sub">Quantum information and computational methods.</span></div></li>
-<li class="row"><span class="k">Prof. Franco Nori</span><div><b>RIKEN Center for Quantum Computing</b><span class="sub">Quantum information physics and open-system dynamics.</span></div></li>
-<li class="row"><span class="k">Dr. Clemens Gneiting</span><div><b>RIKEN</b><span class="sub">Open quantum dynamics, weak measurement, and quantum learning.</span></div></li>
+<li class="row"><span class="k"><a class="link" href="https://nori-physics.org/" target="_blank" rel="noopener">Prof. Franco Nori</a></span><div><b>Quantum Information Physics Theory Research Team, RIKEN Center for Quantum Computing, Japan</b><span class="sub">Concurrent affiliation: Department of Physics, University of Michigan, Ann Arbor, USA. Quantum information physics, quantum optics, and open-system dynamics. <a class="link" href="https://lsa.umich.edu/physics/people/research-scientists/nori.html" target="_blank" rel="noopener">University of Michigan profile</a></span></div></li>
+<li class="row"><span class="k"><a class="link" href="https://www.riken.jp/en/research/labs/rqc/qtm_inf_phys_theor_res/" target="_blank" rel="noopener">Dr. Clemens Gneiting</a></span><div><b>Quantum Information Physics Theory Research Team, RIKEN Center for Quantum Computing, Japan</b><span class="sub">Research Scientist. Open quantum dynamics, weak measurement, quantum control, and quantum information processing.</span></div></li>
 <li class="row"><span class="k">Dr. Neill Lambert</span><div><b>RIKEN Center for Quantum Computing</b><span class="sub">Open quantum systems and quantum information physics.</span></div></li>
 <li class="row"><span class="k">Prof. Tanusri Saha-Dasgupta</span><div><b>S. N. Bose National Centre for Basic Sciences</b><span class="sub">Quantum materials and computational many-body physics.</span></div></li>
 <li class="row"><span class="k">Prof. Manoranjan Kumar</span><div><b>S. N. Bose National Centre for Basic Sciences</b><span class="sub">Quantum many-body physics and quantum simulation.</span></div></li>
