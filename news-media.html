@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Conferences | Mostafizur Rahaman</title>
+<title>Research | Mostafizur Rahaman</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
@@ -196,6 +196,59 @@ a{color:inherit}
 .interests li{padding:.8rem 0;border-bottom:1px solid var(--line);font-weight:550}
 
 
+.timeline{
+  position:relative;
+  max-width:900px;
+  margin-top:1.2rem;
+  padding-left:2.2rem;
+}
+.timeline::before{
+  content:"";
+  position:absolute;
+  left:.42rem;
+  top:.4rem;
+  bottom:.45rem;
+  width:2px;
+  background:linear-gradient(to bottom,var(--powder),var(--lavender));
+}
+.milestone{
+  position:relative;
+  padding:0 0 1.8rem 1.15rem;
+}
+.milestone:last-child{padding-bottom:0}
+.milestone::before{
+  content:"";
+  position:absolute;
+  left:-2.18rem;
+  top:.38rem;
+  width:.75rem;
+  height:.75rem;
+  border-radius:50%;
+  background:#fff;
+  border:3px solid var(--purple);
+  box-shadow:0 0 0 4px rgba(218,177,218,.18);
+}
+.milestone .time{
+  color:var(--purple);
+  font-weight:800;
+  font-size:.93rem;
+  letter-spacing:.01em;
+  margin-bottom:.2rem;
+}
+.milestone h3{
+  font-size:1.22rem;
+  line-height:1.25;
+  letter-spacing:-.02em;
+  margin-bottom:.18rem;
+}
+.milestone p{
+  color:var(--muted);
+  font-size:.98rem;
+  line-height:1.5;
+  max-width:58rem;
+}
+
+
 .subtabs{
   display:flex;flex-wrap:wrap;gap:10px 22px;
   margin:0 0 clamp(34px,5vw,58px);
@@ -269,12 +322,24 @@ a{color:inherit}
  alt="Portrait of Mostafizur Rahaman"/>
 </div><div><h1 class="name">Mostafizur Rahaman</h1><ul class="aff"><li>Researcher, KTH Royal Institute of Technology, Sweden</li><li>Research Scientist, IBM Quantum — on sabbatical</li><li>Visiting Scientist, RIKEN Center for Quantum Computing, Japan</li></ul></div></div>
 </div></header>
-<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="">Research</a><a href="news.html" class="">News</a><a href="about.html" class="active">About</a></div></nav>
+<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="">Research</a><a href="news.html" class="active">News</a><a href="about.html" class="">About</a></div></nav>
+
 <main class="page"><div class="wrap">
-<div class="subtabs" aria-label="Publication categories">
-  <a href="journals.html" class="">Journals</a>
-  <a href="conferences.html" class="active">Conferences</a>
-  <a href="patents.html" class="">Patents</a>
-</div><section class="sec"><h2 class="sec-title">Conference publications</h2><ul class="rows"><li class="row"><span class="k">IEEE VTC-Spring</span><div><b>QRADCOM: Quantum Assisted Framework for Joint Detection and Estimation in Radar Communications</b><span class="sub"><a class="link" href="https://ieeexplore.ieee.org/document/10200135" target="_blank" rel="noopener">IEEE Xplore</a></span></div></li><li class="row"><span class="k">IEEE VTC-Spring</span><div><b>A Proposed Quantum Classification Algorithm for Symbol Detection with Noisy Observation</b><span class="sub"><a class="link" href="https://ieeexplore.ieee.org/document/10200127" target="_blank" rel="noopener">IEEE Xplore</a></span></div></li><li class="row"><span class="k">IEEE WCNC</span><div><b>TLS-Regularization Framework for Target Tracking under Perturbations</b><span class="sub"><a class="link" href="https://doi.org/10.1109/WCNC45663.2020.9120648" target="_blank" rel="noopener">DOI / IEEE</a></span></div></li><li class="row"><span class="k">IEEE VTC-Spring</span><div><b>A Classification Framework for Correlated Sample Space in Cognitive Radar</b><span class="sub"><a class="link" href="https://ieeexplore.ieee.org/document/8746500" target="_blank" rel="noopener">IEEE Xplore</a></span></div></li></ul></section></div></main>
+<div class="subtabs" aria-label="News categories">
+  <a href="news.html">International</a>
+  <a href="news-india.html">India</a>
+  <a href="news-media.html" class="active">Media</a>
+</div>
+<section class="sec">
+<h2 class="sec-title">Media &amp; coverage</h2>
+<p class="lead">Selected newspaper and professional-society coverage of research, events, and outreach.</p>
+<div class="news-list">
+  <article class="news-item"><div class="date">Times of India</div><div><h3>IBM is at the Forefront of Quantum Computing Tech</h3><p>Feature on quantum-computing research and the IBM Quantum ecosystem. <a class="link" href="https://timesofindia.indiatimes.com/technology/times-techies/ibm-is-at-the-forefront-of-quantum-computing-tech/articleshow/111619851.cms" target="_blank" rel="noopener">Read article</a></p></div></article>
+  <article class="news-item"><div class="date">Times of India</div><div><h3>SASTRA Conducts Indo-German Workshop on Quantum Technologies</h3><p>Coverage of the Indo-German bilateral workshop on quantum computing technology. <a class="link" href="https://timesofindia.indiatimes.com/city/trichy/sastra-conducts-indo-german-workshop/articleshow/121007841.cms" target="_blank" rel="noopener">Read article</a></p></div></article>
+  <article class="news-item"><div class="date">IEEE ISIT</div><div><h3>Quantum Hackathon — Where Quantum Computing Meets Information Theory</h3><p>Official IEEE ISIT 2025 event feature. <a class="link" href="https://2025.ieee-isit.org/quantum-hackathon" target="_blank" rel="noopener">View feature</a></p></div></article>
+</div>
+</section>
+</div></main>
+</div></main>
 <footer class="foot"><div class="wrap"><span>© 2026 Mostafizur Rahaman</span><span>Quantum Signal &amp; Information Processing</span></div></footer>
 </body></html>

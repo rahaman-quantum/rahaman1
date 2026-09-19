@@ -195,6 +195,52 @@ a{color:inherit}
 .interests{max-width:720px;border-top:2px solid var(--ink)}
 .interests li{padding:.8rem 0;border-bottom:1px solid var(--line);font-weight:550}
 
+
+.subtabs{
+  display:flex;flex-wrap:wrap;gap:10px 22px;
+  margin:0 0 clamp(34px,5vw,58px);
+  padding-bottom:14px;border-bottom:1px solid var(--line)
+}
+.subtabs a{
+  position:relative;text-decoration:none;font-weight:800;
+  letter-spacing:-.02em;padding:.25rem 0
+}
+.subtabs a::after{
+  content:"";position:absolute;left:0;right:0;bottom:-15px;height:4px;
+  background:var(--purple);transform:scaleX(0);transform-origin:left
+}
+.subtabs a:hover,.subtabs a.active{color:var(--purple)}
+.subtabs a.active::after{transform:scaleX(1)}
+.milestone.industry .time,
+.milestone.industry h3{color:#ff2bd6}
+.milestone.industry::before{
+  border-color:#ff2bd6;
+  box-shadow:0 0 0 4px rgba(255,43,214,.16)
+}
+.milestone.industry{
+  background:linear-gradient(90deg,rgba(255,43,214,.055),transparent 72%);
+  margin-left:-.45rem;padding-left:1.6rem
+}
+.news-list{max-width:930px;border-top:2px solid var(--ink)}
+.news-item{
+  display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);
+  gap:.35rem 2rem;padding:1.12rem 0;border-bottom:1px solid var(--line)
+}
+.news-item .date{font-weight:800;color:var(--purple)}
+.news-item h3{font-size:1.18rem;line-height:1.3;letter-spacing:-.02em;margin-bottom:.22rem}
+.news-item p{color:var(--muted);font-size:.96rem}
+.news-item .role{font-weight:750;color:var(--ink)}
+.contact-grid{
+  max-width:760px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px 34px;border-top:2px solid var(--ink);padding-top:18px
+}
+.contact-card{padding-bottom:18px;border-bottom:1px solid var(--line)}
+.contact-card b{display:block;margin-bottom:.25rem}
+@media(max-width:700px){
+  .news-item{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+
 .foot{
   background:#171318;color:#d8d2da;padding:24px 0;font-size:.9rem
 }
@@ -223,7 +269,12 @@ a{color:inherit}
  alt="Portrait of Mostafizur Rahaman"/>
 </div><div><h1 class="name">Mostafizur Rahaman</h1><ul class="aff"><li>Researcher, KTH Royal Institute of Technology, Sweden</li><li>Research Scientist, IBM Quantum — on sabbatical</li><li>Visiting Scientist, RIKEN Center for Quantum Computing, Japan</li></ul></div></div>
 </div></header>
-<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="">Research</a><a href="about.html" class="">About</a><a href="journals.html" class="">Journals</a><a href="conferences.html" class="">Conferences</a><a href="patents.html" class="active">Patents</a></div></nav>
-<main class="page"><div class="wrap"><section class="sec"><h2 class="sec-title">Patents</h2><p class="lead">Granted patents and publicly identifiable patent applications.</p><ul class="rows"><li class="row"><span class="k">Patent 538179</span><div><b>A Composite Quantum Architecture for Quantum Realization of Jordan-Form Based Systems</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">Patent 513458</span><div><b>A Quantum Circuit System for Realizing Hankel Matrix Structure and a Method Thereof</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">Patent 448500</span><div><b>A Quantum Circuit System for Realizing Vandermonde Matrix and a Method Thereof</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">Patent 587602</span><div><b>An Elementary Quantum Gate-Based Quantum Filter System for Denoising Noisy Signals</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">US App. 18/097,221</span><div><b>A Composite Quantum Architecture for Quantum Realization of Jordan-Form Based Systems</b><span class="sub">United States patent application.</span></div></li><li class="row"><span class="k">Appl. 202331025559</span><div><b>Quantum System to Implement Graph Laplacian Operator for Spectrum Estimation and a Method Thereof</b><span class="sub">Indian patent application.</span></div></li><li class="row"><span class="k">US Filing P202401710US01</span><div><b>System and Method for AI-Based Synthesis/Transpilation of General Quantum Circuits</b><span class="sub">D. Madan, M. R. Laskar, et al. IBM Quantum. U.S. patent filing, June 2024.</span></div></li></ul></section></div></main>
+<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="">Research</a><a href="news.html" class="">News</a><a href="about.html" class="active">About</a></div></nav>
+<main class="page"><div class="wrap">
+<div class="subtabs" aria-label="Publication categories">
+  <a href="journals.html" class="">Journals</a>
+  <a href="conferences.html" class="">Conferences</a>
+  <a href="patents.html" class="active">Patents</a>
+</div><section class="sec"><h2 class="sec-title">Patents</h2><p class="lead">Granted patents and publicly identifiable patent applications.</p><ul class="rows"><li class="row"><span class="k">Patent 538179</span><div><b>A Composite Quantum Architecture for Quantum Realization of Jordan-Form Based Systems</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">Patent 513458</span><div><b>A Quantum Circuit System for Realizing Hankel Matrix Structure and a Method Thereof</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">Patent 448500</span><div><b>A Quantum Circuit System for Realizing Vandermonde Matrix and a Method Thereof</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">Patent 587602</span><div><b>An Elementary Quantum Gate-Based Quantum Filter System for Denoising Noisy Signals</b><span class="sub">Indian patent, granted.</span></div></li><li class="row"><span class="k">US App. 18/097,221</span><div><b>A Composite Quantum Architecture for Quantum Realization of Jordan-Form Based Systems</b><span class="sub">United States patent application.</span></div></li><li class="row"><span class="k">Appl. 202331025559</span><div><b>Quantum System to Implement Graph Laplacian Operator for Spectrum Estimation and a Method Thereof</b><span class="sub">Indian patent application.</span></div></li><li class="row"><span class="k">US Filing P202401710US01</span><div><b>System and Method for AI-Based Synthesis/Transpilation of General Quantum Circuits</b><span class="sub">D. Madan, M. R. Laskar, et al. IBM Quantum. U.S. patent filing, June 2024.</span></div></li></ul></section></div></main>
 <footer class="foot"><div class="wrap"><span>© 2026 Mostafizur Rahaman</span><span>Quantum Signal &amp; Information Processing</span></div></footer>
 </body></html>
