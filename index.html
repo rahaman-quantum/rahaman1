@@ -294,6 +294,17 @@ a{color:inherit}
   .contact-grid{grid-template-columns:1fr}
 }
 
+
+.work-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:1rem}
+.work-card{border-top:8px solid transparent;border-image:linear-gradient(90deg,var(--powder),var(--lavender)) 1;padding-top:18px}
+.work-card h3{font-size:1.35rem;letter-spacing:-.025em;margin-bottom:.6rem}
+.work-card p{color:var(--muted);font-size:.98rem;line-height:1.58}
+.scholar-list{max-width:930px;border-top:2px solid var(--ink)}
+.scholar{display:grid;grid-template-columns:minmax(0,14rem) 1fr;gap:.4rem 2rem;padding:1.05rem 0;border-bottom:1px solid var(--line)}
+.scholar .name{font-size:1rem;line-height:1.4;margin:0;font-weight:800}
+.scholar .meta{color:var(--muted);font-size:.95rem}
+@media(max-width:780px){.work-groups{grid-template-columns:1fr}.scholar{grid-template-columns:1fr}}
+
 .foot{
   background:#171318;color:#d8d2da;padding:24px 0;font-size:.9rem
 }
@@ -313,26 +324,30 @@ a{color:inherit}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style></head><body>
 <header class="profile"><div class="wrap">
-<div class="topbar"><a class="mark" href="index.html"><strong>Mostafizur Rahaman, PhD</strong><span>Quantum Signal &amp; Information Processing</span></a>
+<div class="topbar"><a class="mark" href="index.html"><strong>Mostafizur Rahaman</strong><span>Quantum Signal &amp; Information Processing</span></a>
 <nav class="toplinks"><a href="https://scholar.google.com/citations?user=_ZZbn1MAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a><a href="https://github.com/rahaman-quantum" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/mostafizur-rahaman-phd-0698b3a6/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:morl@kth.se">Email</a></nav></div>
 <div class="id"><div class="photo">
 <img src="https://www.kth.se/files/avatar/morl"
  onerror="if(this.dataset.step==='1'){this.src='https://raw.githubusercontent.com/rahaman-quantum/rahaman1/main/IMG_5310.JPG';this.dataset.step='2';}else if(this.dataset.step==='2'){this.src='https://github.com/rahaman-quantum/rahaman1/blob/main/IMG_5310.JPG?raw=1';this.dataset.step='3';}else{this.style.display='none';this.parentElement.innerHTML='<div style=&quot;display:grid;place-items:center;height:100%;font-size:5rem;font-weight:800;color:#4facef&quot;>MR</div>';}"
  data-step="1"
  alt="Portrait of Mostafizur Rahaman"/>
-</div><div><h1 class="name">Dr. Mostafizur Rahaman</h1><ul class="aff"><li>Researcher, KTH Royal Institute of Technology, Sweden</li><li>Research Scientist, IBM Quantum (currently, on leave)</li><li>Visiting Scientist, RIKEN Center for Quantum Computing, Japan</li></ul></div></div>
+</div><div><h1 class="name">Mostafizur Rahaman</h1><ul class="aff"><li>Researcher, KTH Royal Institute of Technology, Sweden</li><li>Research Scientist, IBM Quantum — on sabbatical</li><li>Visiting Scientist, RIKEN Center for Quantum Computing, Japan</li></ul></div></div>
 </div></header>
-<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="active">Research</a><a href="news.html" class="">News</a><a href="about.html" class="">About</a></div></nav>
+<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="active">Research</a><a href="news.html" class="">News</a><a href="about.html" class="">About</a><a href="work-with-me.html">Work with me</a></div></nav>
 <main class="page"><div class="wrap">
 
 <section class="sec"><h2 class="sec-title">Research</h2>
-<p class="lead"><strong>How do we represent, process, and infer information in a noisy world, and what changes when quantum physics does the representing?</strong></p>
+<p class="lead"><strong>How can structure in signals, operators, probability distributions, and physical dynamics be used to design quantum algorithms with lower resource cost and controlled error?</strong></p>
 <div class="prose">
-<p>Quantum computing and quantum information offer a new paradigm for rethinking how we understand nature, and how we represent, process, and infer information in a noisy world. Our research brings together <strong>quantum physics fundamentals</strong>, <strong>mathematical structure and representation</strong>, and <strong>scientifically grounded applications</strong> to ask a few fundamental questions. What do quantum signals represent when they are entangled at the source, interfere in a channel, or are superimposed across different basis systems? When information is modeled with quantum physics, does it help us understand learning models better, such as <strong>quantum reservoir computing</strong>? And when quantum subroutines such as <strong>Hamiltonian projection</strong> or <strong>random circuit sampling</strong> are employed, can we simulate larger systems on today&rsquo;s noisy quantum devices? Answers to these questions guide the design of <strong>complexity-efficient quantum algorithms</strong> for problems ranging from molecular simulation in quantum chemistry and biology to sensing and communication.</p>
+<p>My core research area is <strong>Quantum Signal and Information Processing</strong>. By this, I mean the study of how signals, probability distributions, operators, and dynamical information can be represented, transformed, estimated, and learned using quantum systems.</p>
 
-<p>The foundation of this vision is the study of patterns in data and operators. Structures such as sparsity, Toeplitz and Hankel matrices, Vandermonde matrices, polynomial representations, and restricted spectral support appear everywhere, from the energy spectrum of a molecule to the channel of a communication link or a biosignal recorded from the body. We study how modeling such signals and systems in a quantum computational model changes what is possible, sometimes improving <strong>time complexity</strong> and sometimes <strong>query or gate complexity</strong>, with consequences for <strong>circuit depth, spectral estimation, approximation error, and measurement uncertainty</strong>. This extends to <strong>functional approximation and quantum encoding</strong>, where continuous functions and physical operators are approximated by structured polynomial or basis expansions and mapped to quantum operators with an explicit resource&ndash;accuracy tradeoff, and to <strong>Hamiltonian simulation</strong>, where the same structural view helps us approximate physical dynamics efficiently. In each case, the goal is not only to build a circuit, but to understand how approximation order, gate count, circuit depth, and error scale together, and in doing so to see science and engineering problems differently.</p>
+<p>A recurring theme in my work is to exploit mathematical structure that generic algorithmic formulations often ignore. Sparsity patterns, Toeplitz and Hankel structure, Vandermonde matrices, polynomial representations, and restricted spectral structure can all change the cost of a quantum computation. I study how these properties affect <strong>gate complexity, circuit depth, run-time complexity, spectral estimation, approximation error, and measurement uncertainty</strong>.</p>
 
-<p>Our current work connects these foundations with <strong>quantum machine learning and quantum information</strong>. We explore how many body dynamics and open quantum systems represent and process time-dependent information, that helps in forecasting tasks such as climate, and cellular mechanism, etc. We also work on <strong>utility-scale algorithms on IBM current hardware (Heron and Nighthawk processors) </strong>: <strong> where we do circuit compilation, hardware-aware resource analysis, quantum&ndash;classical workflows, sampling quality, and error-mitgation, </strong> on superconducting processors. Molecular simulation in quantum chemistry and physics, biomedical signal processing, communication theory, and sensing serve as test beds, keeping our methods tied to real problems and to what today&rsquo;s noisy devices can actually deliver.</p>
+<p>This viewpoint extends naturally to <strong>functional approximation and quantum encoding</strong>. Continuous functions and physical operators can be approximated by structured polynomial or basis expansions and mapped to quantum operators with an explicit resource–accuracy tradeoff. The goal is not only to construct a circuit, but to understand how approximation order, gate count, circuit depth, and error scale together.</p>
+
+<p>My current work increasingly connects these algorithmic questions with <strong>quantum information and open-system dynamics</strong>. I am exploring quantum reservoir computing, weak measurement, Lindblad dynamics, temporal memory, and the information-processing capabilities of open quantum systems. These questions are motivated by how quantum systems represent and process time-dependent information, rather than by any single application domain.</p>
+
+<p>At IBM Quantum, where I remain a Research Scientist while on sabbatical, I also work on the practical realization of these ideas: <strong>circuit compilation, hardware-aware resource analysis, quantum–classical workflows, sampling quality, and error-aware execution</strong> on superconducting processors. Applications in quantum chemistry and physics, biology and biomedical processing, communication theory, sensing, and signal processing serve as test beds for the underlying algorithmic methods.</p>
 </div></section>
 
 <section class="sec"><h2 class="sec-title">Research topics</h2><div class="tracks">
@@ -394,7 +409,7 @@ a{color:inherit}
 <li class="row"><span class="k"><a class="link" href="https://www.kth.se/profile/skoglund" target="_blank" rel="noopener">Prof. Mikael Skoglund</a></span><div><b>KTH Royal Institute of Technology</b><span class="sub">Professor of Communication Theory; Head, Department of Information Science and Engineering.</span></div></li>
 <li class="row"><span class="k"><a class="link" href="https://www.kth.se/profile/gaborf" target="_blank" rel="noopener">Prof. Gabor Fodor</a></span><div><b>KTH Royal Institute of Technology / Ericsson Research</b><span class="sub">Adjunct Professor at KTH and researcher at Ericsson Research.</span></div></li>
 <li class="row"><span class="k"><a class="link" href="https://nori-physics.org/" target="_blank" rel="noopener">Prof. Franco Nori</a></span><div><b>Quantum Information Physics Theory Research Team, RIKEN Center for Quantum Computing</b><span class="sub">Team Director; concurrent affiliation with the University of Michigan, Ann Arbor.</span></div></li>
-<li class="row"><span class="k"><a class="link" href="https://scholar.google.com/citations?user=VRekVA0AAAAJ&hl=de" target="_blank" rel="noopener">Dr. Clemens Gneiting</a></span><div><b>Quantum Information Physics Theory Research Team, RIKEN Center for Quantum Computing</b><span class="sub">Research Scientist working on open quantum dynamics and quantum information.</span></div></li>
+<li class="row"><span class="k"><a class="link" href="https://www.riken.jp/en/research/labs/rqc/qtm_inf_phys_theor_res/" target="_blank" rel="noopener">Dr. Clemens Gneiting</a></span><div><b>Quantum Information Physics Theory Research Team, RIKEN Center for Quantum Computing</b><span class="sub">Research Scientist working on open quantum dynamics and quantum information.</span></div></li>
 <li class="row"><span class="k"><a class="link" href="https://www.riken.jp/en/about/people/2023spring-2/index.html" target="_blank" rel="noopener">Dr. Neill Lambert</a></span><div><b>Quantum Information Physics Theory Research Team, RIKEN Center for Quantum Computing</b><span class="sub">Senior Research Scientist; open quantum systems and quantum environments.</span></div></li>
 <li class="row"><span class="k"><a class="link" href="https://www.bose.res.in/people/faculty/profile.jsp?n=tanusri-Saha-dasgupta" target="_blank" rel="noopener">Prof. Tanusri Saha-Dasgupta</a></span><div><b>S. N. Bose National Centre for Basic Sciences</b><span class="sub">Director and Senior Professor; computational materials physics and quantum materials.</span></div></li>
 <li class="row"><span class="k"><a class="link" href="https://www.bose.res.in/people/faculty/profile.jsp?n=manoranjan-kumar" target="_blank" rel="noopener">Prof. Manoranjan Kumar</a></span><div><b>S. N. Bose National Centre for Basic Sciences</b><span class="sub">Professor; strongly correlated systems, quantum computing, and numerical methods.</span></div></li>

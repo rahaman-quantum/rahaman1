@@ -241,6 +241,17 @@ a{color:inherit}
   .contact-grid{grid-template-columns:1fr}
 }
 
+
+.work-groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:1rem}
+.work-card{border-top:8px solid transparent;border-image:linear-gradient(90deg,var(--powder),var(--lavender)) 1;padding-top:18px}
+.work-card h3{font-size:1.35rem;letter-spacing:-.025em;margin-bottom:.6rem}
+.work-card p{color:var(--muted);font-size:.98rem;line-height:1.58}
+.scholar-list{max-width:930px;border-top:2px solid var(--ink)}
+.scholar{display:grid;grid-template-columns:minmax(0,14rem) 1fr;gap:.4rem 2rem;padding:1.05rem 0;border-bottom:1px solid var(--line)}
+.scholar .name{font-size:1rem;line-height:1.4;margin:0;font-weight:800}
+.scholar .meta{color:var(--muted);font-size:.95rem}
+@media(max-width:780px){.work-groups{grid-template-columns:1fr}.scholar{grid-template-columns:1fr}}
+
 .foot{
   background:#171318;color:#d8d2da;padding:24px 0;font-size:.9rem
 }
@@ -269,7 +280,7 @@ a{color:inherit}
  alt="Portrait of Mostafizur Rahaman"/>
 </div><div><h1 class="name">Mostafizur Rahaman</h1><ul class="aff"><li>Researcher, KTH Royal Institute of Technology, Sweden</li><li>Research Scientist, IBM Quantum — on sabbatical</li><li>Visiting Scientist, RIKEN Center for Quantum Computing, Japan</li></ul></div></div>
 </div></header>
-<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="">Research</a><a href="news.html" class="">News</a><a href="about.html" class="active">About</a></div></nav>
+<nav class="mainnav"><div class="wrap navin"><a href="index.html" class="">Research</a><a href="news.html" class="">News</a><a href="about.html" class="active">About</a><a href="work-with-me.html">Work with me</a></div></nav>
 <main class="page"><div class="wrap">
 <div class="subtabs" aria-label="Publication categories">
   <a href="journals.html" class="">Journals</a>
